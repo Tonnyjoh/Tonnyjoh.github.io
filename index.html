@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flymetothemoon</title>
+    <meta name="description"
+        content="Portfolio de RAJAOHARIVONY Haritody Tonny, Développeur Full Stack et Architecte Logiciel.">
+    <meta name="author" content="RAJAOHARIVONY Haritody Tonny">
+    <meta name="keywords" content="Développeur, Full Stack, Architecte Logiciel, Portfolio, React, Node.js, Python">
+    <meta name="theme-color" content="#000000">
+    <link rel="icon" href="src/assets/logo.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="src/assets/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="./src/output.css" rel="stylesheet">
+    <link rel="import"
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap">
+</head>
+
+<body class="bg-white dark:bg-trueblack">
+    <!-- Theme toggle -->
+    <button id="themeToggle"
+        class="fixed top-6 h-12 w-12 right-6 z-50 p-3 rounded-full bg-white dark:bg-darkgray shadow-lg hover:shadow-xl transition-all">
+        <i class="fas fa-moon text-gray-800 dark:hidden"></i>
+        <i class="fas fa-sun text-yellow-300 hidden dark:block"></i>
+    </button>
+
+    <!-- Header with terminal style -->
+    <header class="container mx-auto px-4 py-16">
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-zinc-50 dark:bg-darkgray p-8 rounded-lg shadow-sm">
+                <div class="flex items-center mb-6">
+                    <div class="w-3 h-3 rounded-full bg-red-500 mr-2"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500 mr-2"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                </div>
+                <div class="terminal-output mb-6">
+                    <p class="mono text-gray-600 dark:text-gray-400 mb-2 command-line">whoami</p>
+                    <div class="flex items-center">
+                        <h1 class="text-4xl md:text-5xl font-medium text-gray-900 dark:text-white mb-2">RAJAOHARIVONY
+                            Haritody Tonny</h1>
+                        <div class="rocket-animation-container ml-4">
+                            <!-- Animation de fusée -->
+                            <div class="stage">
+                                <div class="rocket-body">
+                                    <div class="rocket-top">
+                                        <div class="antenna"></div>
+                                        <div class="base2"></div>
+                                        <div class="base1"></div>
+                                    </div>
+                                    <div class="rocket-glass">
+                                        <div class="reflection"></div>
+                                    </div>
+                                    <div class="rocket-flag">
+                                        <img src="https://i.postimg.cc/02tkCh3m/1682594977157.png" width="20"
+                                            height="20" alt="flag" />
+                                    </div>
+                                    <div class="boster bosterL">
+                                    </div>
+                                    <div class="boster bosterR"></div>
+                                    <div class="ring">
+                                        <div class="s1"></div>
+                                        <div class="s1"></div>
+                                        <div class="s1"></div>
+                                        <div class="s1"></div>
+                                        <div class="s1"></div>
+                                        <div class="s1"></div>
+                                        <div class="s1"></div>
+                                    </div>
+                                    <div class="fire">
+                                        <div class="flame h1"></div>
+                                        <div class="flame h2"></div>
+                                        <div class="flame h3"></div>
+                                        <div class="flame h4"></div>
+                                        <div class="flame h5"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Message animé -->
+                            <div class="rocket-message">
+                                <span id="rocket-words">Fly me to the moon :)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-500 dark:text-gray-400">Développeur Junior</p>
+                </div>
+
+                <div class="terminal-output mb-6">
+                    <p class="mono text-gray-600 dark:text-gray-400 mb-2 command-line">cat about.txt</p>
+                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed output-line">
+                        Développeur junior motivé et curieux, passionné par l'apprentissage continu et la résolution de
+                        problèmes complexes.
+                        Spécialisé en Électronique, Système Informatique et Intelligence Artificielle, je m'efforce
+                        d'atteindre l'excellence
+                        dans tous mes projets.
+                    </p>
+                </div>
+
+                <div class="terminal-output">
+                    <p class="mono text-gray-600 dark:text-gray-400 mb-2 command-line">./contact.sh</p>
+                    <div class="flex flex-wrap gap-4 mt-2">
+                        <a href="https://github.com/Tonnyjoh" target="_blank"
+                            class="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition flex items-center">
+                            <i class="fab fa-github mr-2"></i> GitHub
+                        </a>
+                        <a href="https://www.linkedin.com/in/tonny-rajaoharivony-504a66273/" target="_blank"
+                            class="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition flex items-center">
+                            <i class="fab fa-linkedin mr-2"></i> LinkedIn
+                        </a>
+                        <a href="mailto:ynnotjoh@gmail.com"
+                            class="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition flex items-center">
+                            <i class="fas fa-envelope mr-2"></i> Email
+                        </a>
+                        <a href="src/assets/cv.pdf" download
+                            class="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition flex items-center">
+                            <i class="fas fa-file-download mr-2"></i>CV
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="container mx-auto px-4">
+        <!-- Skills section -->
+        <!-- Skills section -->
+        <section class="mb-20">
+            <div class="max-w-4xl mx-auto">
+                <div class="terminal-output mb-8">
+                    <p class="mono text-gray-600 dark:text-gray-400 command-line">ls skills/</p>
+                    <h2 class="text-2xl font-medium text-gray-900 dark:text-white mt-4 mb-6">Compétences Techniques</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Langages de programmation -->
+                    <div
+                        class="bg-white dark:bg-darkgray p-6 rounded-lg border border-gray-200 dark:border-gray-700 card-hover">
+                        <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-4">Langages de programmation
+                        </h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div
+                                    class="flex justify-between mb-1 text-sm teReady for launchxt-gray-600 dark:text-gray-400">
+                                    <span>C</span>
+                                    <!-- <span>70%</span>-->
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="--progress-width: 20%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1 text-sm text-gray-600 dark:text-gray-400">
+                                    <span>Java</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="--progress-width: 45%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1 text-sm text-gray-600 dark:text-gray-400">
+                                    <span>JavaScript</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="--progress-width: 40%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1 text-sm text-gray-600 dark:text-gray-400">
+                                    <span>PHP</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="--progress-width: 55%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Frameworks -->
+                    <div
+                        class="bg-white dark:bg-darkgray p-6 rounded-lg border border-gray-200 dark:border-gray-700 card-hover">
+                        <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-4">Frameworks</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-1 text-sm text-gray-600 dark:text-gray-400">
+                                    <span>Laravel</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="--progress-width: 40%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1 text-sm text-gray-600 dark:text-gray-400">
+                                    <span>CodeIgniter</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="--progress-width: 36%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1 text-sm text-gray-600 dark:text-gray-400">
+                                    <span>Vue.js</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="--progress-width: 35%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1 text-sm text-gray-600 dark:text-gray-400">
+                                    <span>React</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="--progress-width: 36%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bases de données -->
+                    <div
+                        class="bg-white dark:bg-darkgray p-6 rounded-lg border border-gray-200 dark:border-gray-700 card-hover">
+                        <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-4">Bases de données</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-1 text-sm text-gray-600 dark:text-gray-400">
+                                    <span>MySQL</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="--progress-width: 40%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1 text-sm text-gray-600 dark:text-gray-400">
+                                    <span>PostgreSQL</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="--progress-width: 30%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <div class="section-divider"></div>
+
+        <!-- Projects section -->
+        <section class="mb-20">
+            <div class="max-w-4xl mx-auto">
+                <div class="terminal-output mb-8">
+                    <p class="mono text-gray-600 dark:text-gray-400 command-line">cd projects/ && ls -l</p>
+                    <h2 class="text-2xl font-medium text-gray-900 dark:text-white mt-4 mb-6">Projets</h2>
+                </div>
+
+                <div class="grid grid-cols-1 gap-6">
+                    <!-- Project 1 -->
+                    <div
+                        class="bg-white dark:bg-darkgray p-6 rounded-lg border border-gray-200 dark:border-gray-700 card-hover">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-medium text-gray-900 dark:text-white">Garden - Projet de fin
+                                d'études</h3>
+                            <span
+                                class="text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-2 py-1 rounded">Académique</span>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4 output-line">
+                            Conception d'une serre autonome avec suivi en temps réel via une application mobile.
+                            Responsable de la conception et réalisation complète de l'application.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-2 py-1 rounded">Flutter</span>
+                            <span
+                                class="text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-2 py-1 rounded">Arduino</span>
+                            <span
+                                class="text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-2 py-1 rounded">IoT</span>
+                            <span
+                                class="text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-2 py-1 rounded">PostgreSQL</span>
+                        </div>
+
+                        <div class="flex space-x-3">
+                            <a href="https://github.com/Tonnyjoh/garden_app" target="_blank"
+                                class="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white text-sm flex items-center">
+                                <i class="fab fa-github mr-1"></i> Code source
+                            </a>
+                            <!-- <a href="#"
+                           class="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white text-sm flex items-center">
+                            <i class="fas fa-external-link-alt mr-1"></i> Documentation
+                        </a>-->
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div
+                        class="bg-white dark:bg-darkgray p-6 rounded-lg border border-gray-200 dark:border-gray-700 card-hover">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-medium text-gray-900 dark:text-white">Taktak</h3>
+                            <span
+                                class="text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-2 py-1 rounded">Académique</span>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4 output-line">
+                            Taktak est une application innovante permettant aux utilisateurs d'échanger des objets
+                            facilement. Que ce soit pour un troc ou un échange temporaire, Taktak facilite la mise en
+                            relation entre les utilisateurs pour des transactions simples et efficaces.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-2 py-1 rounded">CodeIgniter
+                                4</span>
+                            <span
+                                class="text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-2 py-1 rounded">MySQL</span>
+                            <span
+                                class="text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-2 py-1 rounded">JavaScript</span>
+                            <span
+                                class="text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-2 py-1 rounded">CSS</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="https://github.com/Tonnyjoh/tak_tak" target="_blank"
+                                class="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white text-sm flex items-center">
+                                <i class="fab fa-github mr-1"></i> Code source
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <!-- Project 3 -->
+                    <div
+                        class="bg-white dark:bg-darkgray p-6 rounded-lg border border-gray-200 dark:border-gray-700 card-hover">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-medium text-gray-900 dark:text-white">BluetoothDrone</h3>
+                            <span
+                                class="text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-2 py-1 rounded">Académique</span>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4 output-line">
+                            Interface de commande d'un drone via Bluetooth. Application développée pour contrôler
+                            des systèmes embarqués à distance.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-2 py-1 rounded">Arduino</span>
+                            <span
+                                class="text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-2 py-1 rounded">Java</span>
+                            <span
+                                class="text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-2 py-1 rounded">Bluetooth</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="#"
+                                class="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white text-sm flex items-center">
+                                <i class="fab fa-github mr-1"></i> Code source
+                            </a>
+
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-white dark:bg-darkgray p-6 rounded-lg border border-gray-200 dark:border-gray-700 card-hover">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-medium text-gray-900 dark:text-white">Leven</h3>
+                            <span
+                                class="text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-2 py-1 rounded">Personnel</span>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4 output-line">
+                            Leven est un projet personnel de correcteur orthographique en développement, utilisant Java
+                            Swing pour l'interface utilisateur. Bien que toujours en cours de perfectionnement, Leven
+                            vise à offrir des suggestions de mots pour améliorer la qualité de vos textes.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-2 py-1 rounded">Java
+                                Swing</span>
+                            <span
+                                class="text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-2 py-1 rounded">Algorithmes</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="https://github.com/Tonnyjoh/leven" target="_blank"
+                                class="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white text-sm flex items-center">
+                                <i class="fab fa-github mr-1"></i> Code source
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Experience section -->
+        <section class="mb-20">
+            <div class="max-w-4xl mx-auto">
+                <div class="terminal-output mb-8">
+                    <p class="mono text-gray-600 dark:text-gray-400 command-line">cat experience.txt</p>
+                    <h2 class="text-2xl font-medium text-gray-900 dark:text-white mt-4 mb-6">Expérience Professionnelle
+                    </h2>
+                </div>
+
+                <div class="space-y-8">
+                    <!-- Experience 1 - Lumin'ia -->
+                    <div
+                        class="bg-white dark:bg-darkgray p-6 rounded-lg border border-gray-200 dark:border-gray-700 card-hover">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                            <h3 class="text-lg font-medium text-gray-900 dark:text-white">Développeur Frontend - Stage
+                            </h3>
+                            <span class="text-sm text-gray-500 dark:text-gray-400">Novembre 2024 - Avril 2025</span>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400 mb-3 output-line">Lumin'ia • Madagascar</p>
+                        <p class="text-gray-700 dark:text-gray-300 output-line">
+                            Participation à la réalisation frontend du site web de l'entreprise.
+                            Implémentation d'interfaces réactives et optimisation de l'expérience utilisateur.
+                        </p>
+                    </div>
+
+                    <!-- Experience 2 - Haona Soa -->
+                    <div
+                        class="bg-white dark:bg-darkgray p-6 rounded-lg border border-gray-200 dark:border-gray-700 card-hover">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                            <h3 class="text-lg font-medium text-gray-900 dark:text-white">Développeur Full Stack - CDD
+                            </h3>
+                            <span class="text-sm text-gray-500 dark:text-gray-400">Janvier - Avril 2024</span>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400 mb-3 output-line">ONG Haona Soa • Madagascar</p>
+                        <p class="text-gray-700 dark:text-gray-300 output-line">
+                            Contribution au développement d'une application mobile pour la sensibilisation
+                            des femmes au changement climatique dans la région de Haute Matsiatra.
+                            Développement frontend et backend avec Vue.js pour les appareils KaiOS.
+                        </p>
+                    </div>
+
+                    <!-- Competitions -->
+                    <div
+                        class="bg-white dark:bg-darkgray p-6 rounded-lg border border-gray-200 dark:border-gray-700 card-hover">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                            <h3 class="text-lg font-medium text-gray-900 dark:text-white">Compétitions</h3>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300 output-line mt-4">
+                            <span class="font-medium">40th Cloudflight Coding Contest - Algo - 2024</span><br>
+                            <span class="text-gray-600 dark:text-gray-400">School : 4ème place<br>
+                                Classic : 4ème place</span>
+                        </p>
+                        <p class="text-gray-700 dark:text-gray-300 output-line">
+                            <span class="font-medium">Weekly December GDSC ISPM (Catégorie dev) - 2023</span><br>
+                            <span class="text-gray-600 dark:text-gray-400">Un projet de 48h pour chaque weekend</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <section class="mb-20">
+            <div class="max-w-4xl mx-auto">
+                <div id="toast"
+                    class="absolute p-4 rounded-md transform translate-x-full transition-transform duration-300 ease-in-out bg-green-100 text-green-800 border border-green-200 shadow-md">
+                    <div class="flex items-center">
+                        <span id="toastIcon" class="mr-2"></span>
+                        <span id="toastMessage" class="text-sm font-medium"></span>
+                    </div>
+                </div>
+
+                <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+                    <input type="hidden" name="access_key" value="4b05e110-1a69-45d7-ab21-e6de3d6b2b45">
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-gray-700 dark:text-gray-300 mb-2">Nom</label>
+                            <input type="text" id="name" name="name" required
+                                class="w-full bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-600 rounded px-4 py-2 text-gray-900 dark:text-gray-200 focus:outline-none focus:border-gray-500 dark:focus:border-gray-400 transition">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-700 dark:text-gray-300 mb-2">Email</label>
+                            <input type="email" id="email" name="email" required
+                                class="w-full bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-600 rounded px-4 py-2 text-gray-900 dark:text-gray-200 focus:outline-none focus:border-gray-500 dark:focus:border-gray-400 transition">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="subject" class="block text-gray-700 dark:text-gray-300 mb-2">Sujet</label>
+                        <input type="text" id="subject" name="subject" required
+                            class="w-full bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-600 rounded px-4 py-2 text-gray-900 dark:text-gray-200 focus:outline-none focus:border-gray-500 dark:focus:border-gray-400 transition">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-gray-700 dark:text-gray-300 mb-2">Message</label>
+                        <textarea id="message" name="message" rows="5" required
+                            class="w-full bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-600 rounded px-4 py-2 text-gray-900 dark:text-gray-200 focus:outline-none focus:border-gray-500 dark:focus:border-gray-400 transition"></textarea>
+                    </div>
+
+                    <input type="hidden" name="from_name" value="flymetothemoon">
+
+                    <!-- Champ honeypot anti-spam -->
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                    <button type="submit" id="submitBtn"
+                        class="bg-gray-900 dark:bg-gray-700 hover:bg-black dark:hover:bg-gray-600 text-white font-medium py-3 px-6 rounded transition flex items-center justify-center min-h-[48px]">
+                        <i class="fas fa-paper-plane mr-2"></i> Envoyer
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 dark:bg-black py-8 border-t border-gray-200 dark:border-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="mb-4 md:mb-0">
+                        <p class="mono text-gray-500 dark:text-gray-400 text-sm">© 2025 RAJAOHARIVONY Haritody Tonny.
+                            Tous droits réservés.
+                        </p>
+                    </div>
+                    <div class="flex space-x-6">
+                        <a href="https://github.com/Tonnyjoh" target="_blank"
+                            class="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/tonny-rajaoharivony-504a66273/" target="_blank"
+                            class="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:ynnotjoh@gmail.com"
+                            class="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="src/assets/cv.pdf" download
+                            class="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition">
+                            <i class="fas fa-file-download"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="src/script/script.js"></script>
+<script src="src/script/form.js"></script>
+
+</html>
