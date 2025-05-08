@@ -8,6 +8,9 @@ module.exports = {
                 trueblack: '#0A0A0A',
                 darkgray: '#121212',
             },
+            fontFamily: {
+                'mono': ['IBM Plex Mono', 'monospace'],
+            },
             animation: {
                 'typewriter': 'typing 3.5s steps(40, end)',
                 'blink-caret': 'blink-caret 0.75s step-end infinite',
