@@ -991,21 +991,6 @@ video {
   background-color: rgb(234 179 8 / var(--tw-bg-opacity, 1));
 }
 
-.bg-zinc-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(161 161 170 / var(--tw-bg-opacity, 1));
-}
-
-.bg-zinc-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(244 244 245 / var(--tw-bg-opacity, 1));
-}
-
-.bg-slate-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(241 245 249 / var(--tw-bg-opacity, 1));
-}
-
 .p-3 {
   padding: 0.75rem;
 }
@@ -1601,16 +1586,6 @@ html {
 }
 
 @keyframes flameGrowH2 {
-  0% {
-    height: 24px;
-  }
-
-  100% {
-    height: 36px;
-  }
-}
-
-@keyframes flameGrowH3 {
   0% {
     height: 24px;
   }
