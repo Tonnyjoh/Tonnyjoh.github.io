@@ -2,5 +2,4 @@
 .vscode
 src/script
 src/style
-node_modules
-node_modules/
+/node_modules
