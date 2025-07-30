@@ -20,24 +20,61 @@
             rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link href="./src/output.css" rel="stylesheet">
+    <style>
+        /* Flag styles for language switcher */
+        .flag-icon {
+            width: 24px;
+            height: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        /* Custom language toggle styles */
+        .language-toggle {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding: 6px;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .language-toggle:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .flag-icon.opacity-50 {
+            opacity: 0.5;
+        }
+    </style>
 </head>
 
 <body class="bg-gray-50 dark:bg-trueblack">
 <!-- Theme toggle -->
-<button id="themeToggle"
-        class="fixed top-6 h-12 w-12 right-6 z-50 p-3 rounded-full bg-gray-50 dark:bg-darkgray shadow-lg hover:shadow-xl transition-all">
-    <i class="fas fa-moon text-gray-800 dark:hidden"></i>
-    <i class="fas fa-sun text-yellow-300 hidden dark:block"></i>
-</button>
+<div class="fixed top-6 right-6 z-50 flex gap-3">
+    <!-- Language toggle -->
+    <button id="languageToggle" 
+            class="h-12 p-2 rounded-full bg-gray-50 dark:bg-darkgray shadow-lg hover:shadow-xl transition-all language-toggle">
+        <img id="frFlag" src="https://flagcdn.com/w40/fr.png" alt="Français" class="flag-icon">
+        <img id="enFlag" src="https://flagcdn.com/w40/gb.png" alt="English" class="flag-icon opacity-50">
+    </button>
+    
+    <!-- Theme toggle button -->
+    <button id="themeToggle"
+            class="h-12 w-12 p-3 rounded-full bg-gray-50 dark:bg-darkgray shadow-lg hover:shadow-xl transition-all">
+        <i class="fas fa-moon text-gray-800 dark:hidden"></i>
+        <i class="fas fa-sun text-yellow-300 hidden dark:block"></i>
+    </button>
+</div>
 
 <!-- Floating navigation -->
 <nav class="fixed left-6 top-1/2 transform -translate-y-1/2 z-40 hidden md:block">
     <div class="flex flex-col space-y-4">
-        <a href="#about" class="w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600 hover:bg-green-500 dark:hover:bg-green-500 transition-all duration-300 tooltip active-nav" data-tooltip="À propos"></a>
-        <a href="#skills" class="w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600 hover:bg-green-500 dark:hover:bg-green-500 transition-all duration-300 tooltip" data-tooltip="Compétences"></a>
-        <a href="#projects" class="w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600 hover:bg-green-500 dark:hover:bg-green-500 transition-all duration-300 tooltip" data-tooltip="Projets"></a>
-        <a href="#experiences" class="w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600 hover:bg-green-500 dark:hover:bg-green-500 transition-all duration-300 tooltip" data-tooltip="Expérience"></a>
-        <a href="#contact" class="w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600 hover:bg-green-500 dark:hover:bg-green-500 transition-all duration-300 tooltip" data-tooltip="Contact"></a>
+        <a href="#about" class="w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600 hover:bg-green-500 dark:hover:bg-green-500 transition-all duration-300 tooltip active-nav" data-tooltip="À propos" data-i18n-attr="data-tooltip:nav_about"></a>
+        <a href="#skills" class="w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600 hover:bg-green-500 dark:hover:bg-green-500 transition-all duration-300 tooltip" data-tooltip="Compétences" data-i18n-attr="data-tooltip:nav_skills"></a>
+        <a href="#projects" class="w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600 hover:bg-green-500 dark:hover:bg-green-500 transition-all duration-300 tooltip" data-tooltip="Projets" data-i18n-attr="data-tooltip:nav_projects"></a>
+        <a href="#experiences" class="w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600 hover:bg-green-500 dark:hover:bg-green-500 transition-all duration-300 tooltip" data-tooltip="Expérience" data-i18n-attr="data-tooltip:nav_experience"></a>
+        <a href="#contact" class="w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600 hover:bg-green-500 dark:hover:bg-green-500 transition-all duration-300 tooltip" data-tooltip="Contact" data-i18n-attr="data-tooltip:nav_contact"></a>
     </div>
 </nav>
 
@@ -51,7 +88,7 @@
                 <div class="w-3 h-3 rounded-full bg-green-500"></div>
             </div>
             <div class="terminal-output mb-6">
-                <p class="mono text-gray-600 dark:text-gray-400 mb-2 command-line">whoami</p>
+                <p class="mono text-gray-600 dark:text-gray-400 mb-2 command-line" data-i18n="whoami">whoami</p>
                 <div class="flex items-center">
                     <h1 id="typewriter-name" class="text-4xl md:text-5xl font-medium text-gray-900 dark:text-white mb-2 mono"></h1>
                     <div class="rocket-animation-container ml-4">
@@ -97,12 +134,12 @@
                         </div>
                     </div>
                 </div>
-                <p class="text-gray-500 dark:text-gray-400">Développeur Fullstack Junior</p>
+                <p class="text-gray-500 dark:text-gray-400" data-i18n="developer_title">Développeur Fullstack Junior</p>
             </div>
 
             <div class="terminal-output mb-6">
                 <p class="mono text-gray-600 dark:text-gray-400 mb-2 command-line">cat about.txt</p>
-                <p class="text-gray-700 dark:text-gray-300 leading-relaxed output-line">
+                <p class="text-gray-700 dark:text-gray-300 leading-relaxed output-line" data-i18n="about_text">
                     Développeur junior motivé et curieux, passionné par l'apprentissage continu et la résolution de
                     problèmes complexes.
                     Spécialisé en Électronique, Système Informatique et Intelligence Artificielle, je m'efforce
@@ -112,7 +149,7 @@
             </div>
 
             <div class="terminal-output">
-                <p class="mono text-gray-600 dark:text-gray-400 mb-2 command-line">./contact.sh</p>
+                <p class="mono text-gray-600 dark:text-gray-400 mb-2 command-line" data-i18n="contact_sh">./contact.sh</p>
                 <div class="flex flex-wrap gap-4 mt-2">
                     <a href="https://github.com/Tonnyjoh" target="_blank"
                        class="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition flex items-center">
@@ -142,8 +179,8 @@
     <section id="skills" class="mb-20 fade-in">
         <div class="max-w-4xl mx-auto">
             <div class="terminal-output mb-8">
-                <p class="mono text-gray-600 dark:text-gray-400 command-line">ls skills/</p>
-                <h2 class="mono text-2xl font-medium text-gray-900 dark:text-white mt-4 mb-6">Compétences Techniques</h2>
+                <p class="mono text-gray-600 dark:text-gray-400 command-line" data-i18n="skills_cmd">ls skills/</p>
+                <h2 class="mono text-2xl font-medium text-gray-900 dark:text-white mt-4 mb-6" data-i18n="skills_title">Compétences Techniques</h2>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -153,7 +190,7 @@
                         <div class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-900 flex items-center justify-center mr-4">
                             <i class="fas fa-code text-green-500 dark:text-green-400"></i>
                         </div>
-                        <h3 class="mono text-xl font-semibold">Langages de programmation</h3>
+                        <h3 class="mono text-xl font-semibold" data-i18n="skills_languages">Langages de programmation</h3>
                     </div>
                     <div class="space-y-4">
                         <div>
@@ -197,7 +234,7 @@
                         <div class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-900 flex items-center justify-center mr-4">
                             <i class="fas fa-cubes text-green-500 dark:text-green-400"></i>
                         </div>
-                        <h3 class="mono text-xl font-semibold">Frameworks</h3>
+                        <h3 class="mono text-xl font-semibold" data-i18n="skills_frameworks">Frameworks</h3>
                     </div>
                     <div class="space-y-4">
                         <div>
@@ -249,7 +286,7 @@
                         <div class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-900 flex items-center justify-center mr-4">
                             <i class="fas fa-database text-green-500 dark:text-green-400"></i>
                         </div>
-                        <h3 class="mono text-xl font-semibold">Base de données</h3>
+                        <h3 class="mono text-xl font-semibold" data-i18n="skills_databases">Base de données</h3>
                     </div>
                     <div class="space-y-4">
                         <div>
@@ -277,7 +314,7 @@
                         <div class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-900 flex items-center justify-center mr-4">
                             <i class="fas fa-tools text-green-500 dark:text-green-400"></i>
                         </div>
-                        <h3 class="mono text-xl font-semibold">Outils & Technologies</h3>
+                        <h3 class="mono text-xl font-semibold" data-i18n="skills_tools">Outils & Technologies</h3>
                     </div>
                     <div class="flex flex-wrap gap-2">
                         <span class="tag px-3 py-1 rounded-full text-sm">Git</span>
@@ -296,17 +333,17 @@
     <section id="projects" class="mb-20 fade-in">
         <div class="max-w-4xl mx-auto">
             <div class="terminal-output mb-8">
-                <p class="mono text-gray-600 dark:text-gray-400 command-line">cd projects/ && ls -l</p>
-                <h2 class="mono text-2xl font-medium text-gray-900 dark:text-white mt-4 mb-6">Projets</h2>
+                <p class="mono text-gray-600 dark:text-gray-400 command-line" data-i18n="projects_cmd">cd projects/ && ls -l</p>
+                <h2 class="mono text-2xl font-medium text-gray-900 dark:text-white mt-4 mb-6" data-i18n="projects_title">Projets</h2>
             </div>
 
             <div class="grid grid-cols-1 gap-6">
                 <div class="bg-gray-50 dark:bg-darkgray p-6 rounded-lg border border-gray-200 dark:border-gray-700 card-hover fade-in">
                     <div class="flex justify-between items-start mb-4">
-                        <h3 class="text-xl font-medium text-gray-900 dark:text-white">Application Web de Référencement des Salles de Sport à Antananarivo</h3>
-                        <span class="text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-2 py-1 rounded">Projet Professionnel</span>
+                        <h3 class="text-xl font-medium text-gray-900 dark:text-white" data-i18n="gym_app_title">Application Web de Référencement des Salles de Sport à Antananarivo</h3>
+                        <span class="text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-2 py-1 rounded" data-i18n="project_type_professional">Projet Professionnel</span>
                     </div>
-                    <p class="text-gray-700 dark:text-gray-300 mb-4 output-line">
+                    <p class="text-gray-700 dark:text-gray-300 mb-4 output-line" data-i18n="gym_app_desc">
                         Création d'une application web pour centraliser les salles de sport à Antananarivo,
                         permettant aux utilisateurs de trouver, comparer et réserver des salles de sport.
                         Développement complet avec Next.js pour le front-end et Laravel pour le back-end, connecté à
@@ -323,10 +360,10 @@
                 <!-- Project 1 -->
                 <div class="bg-gray-50 dark:bg-darkgray p-6 rounded-lg border border-gray-200 dark:border-gray-700 card-hover fade-in">
                     <div class="flex justify-between items-start mb-4">
-                        <h3 class="text-xl font-medium text-gray-900 dark:text-white">Garden - Projet de fin d'études</h3>
-                        <span class="text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-2 py-1 rounded">Académique</span>
+                        <h3 class="text-xl font-medium text-gray-900 dark:text-white" data-i18n="garden_title">Garden - Projet de fin d'études</h3>
+                        <span class="text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-2 py-1 rounded" data-i18n="project_type_academic">Académique</span>
                     </div>
-                    <p class="text-gray-700 dark:text-gray-300 mb-4 output-line">
+                    <p class="text-gray-700 dark:text-gray-300 mb-4 output-line" data-i18n="garden_desc">
                         Conception d'une serre autonome avec suivi en temps réel via une application mobile.
                         Responsable de la conception et réalisation complète de l'application.
                     </p>
@@ -340,7 +377,7 @@
                     <div class="flex space-x-3">
                         <a href="https://github.com/Tonnyjoh/garden_app" target="_blank"
                            class="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white text-sm flex items-center">
-                            <i class="fab fa-github mr-1"></i> Code source
+                            <i class="fab fa-github mr-1"></i> <span data-i18n="view_source">Code source</span>
                         </a>
                     </div>
                 </div>
@@ -348,10 +385,10 @@
                 <!-- Project 2 -->
                 <div class="bg-gray-50 dark:bg-darkgray p-6 rounded-lg border border-gray-200 dark:border-gray-700 card-hover fade-in">
                     <div class="flex justify-between items-start mb-4">
-                        <h3 class="text-xl font-medium text-gray-900 dark:text-white">Taktak</h3>
-                        <span class="text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-2 py-1 rounded">Académique</span>
+                        <h3 class="text-xl font-medium text-gray-900 dark:text-white" data-i18n="taktak_title">Taktak</h3>
+                        <span class="text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-2 py-1 rounded" data-i18n="project_type_academic">Académique</span>
                     </div>
-                    <p class="text-gray-700 dark:text-gray-300 mb-4 output-line">
+                    <p class="text-gray-700 dark:text-gray-300 mb-4 output-line" data-i18n="taktak_desc">
                         Taktak est une application innovante permettant aux utilisateurs d'échanger des objets
                         facilement. Que ce soit pour un troc ou un échange temporaire, Taktak facilite la mise en
                         relation entre les utilisateurs pour des transactions simples et efficaces.
@@ -365,7 +402,7 @@
                     <div class="flex space-x-3">
                         <a href="https://github.com/Tonnyjoh/tak_tak" target="_blank"
                            class="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white text-sm flex items-center">
-                            <i class="fab fa-github mr-1"></i> Code source
+                            <i class="fab fa-github mr-1"></i> <span data-i18n="view_source">Code source</span>
                         </a>
                     </div>
                 </div>
@@ -373,10 +410,10 @@
                 <!-- Project 3 -->
                 <div class="bg-gray-50 dark:bg-darkgray p-6 rounded-lg border border-gray-200 dark:border-gray-700 card-hover fade-in">
                     <div class="flex justify-between items-start mb-4">
-                        <h3 class="text-xl font-medium text-gray-900 dark:text-white">BluetoothDrone</h3>
-                        <span class="text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-2 py-1 rounded">Académique</span>
+                        <h3 class="text-xl font-medium text-gray-900 dark:text-white" data-i18n="drone_title">BluetoothDrone</h3>
+                        <span class="text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-2 py-1 rounded" data-i18n="project_type_academic">Académique</span>
                     </div>
-                    <p class="text-gray-700 dark:text-gray-300 mb-4 output-line">
+                    <p class="text-gray-700 dark:text-gray-300 mb-4 output-line" data-i18n="drone_desc">
                         Interface de commande d'un drone via Bluetooth. Application développée pour contrôler
                         des systèmes embarqués à distance.
                     </p>
@@ -388,17 +425,17 @@
                     <div class="flex space-x-3">
                         <a href="#"
                            class="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white text-sm flex items-center">
-                            <i class="fab fa-github mr-1"></i> Code source
+                            <i class="fab fa-github mr-1"></i> <span data-i18n="view_source">Code source</span>
                         </a>
                     </div>
                 </div>
 
                 <div class="bg-gray-50 dark:bg-darkgray p-6 rounded-lg border border-gray-200 dark:border-gray-700 card-hover fade-in">
                     <div class="flex justify-between items-start mb-4">
-                        <h3 class="text-xl font-medium text-gray-900 dark:text-white">Leven</h3>
-                        <span class="text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-2 py-1 rounded">Personnel</span>
+                        <h3 class="text-xl font-medium text-gray-900 dark:text-white" data-i18n="leven_title">Leven</h3>
+                        <span class="text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-2 py-1 rounded" data-i18n="project_type_personal">Personnel</span>
                     </div>
-                    <p class="text-gray-700 dark:text-gray-300 mb-4 output-line">
+                    <p class="text-gray-700 dark:text-gray-300 mb-4 output-line" data-i18n="leven_desc">
                         Leven est un projet personnel de correcteur orthographique en développement, utilisant Java
                         Swing pour l'interface utilisateur. Bien que toujours en cours de perfectionnement, Leven
                         vise à offrir des suggestions de mots pour améliorer la qualité de vos textes.
@@ -410,7 +447,7 @@
                     <div class="flex space-x-3">
                         <a href="https://github.com/Tonnyjoh/leven" target="_blank"
                            class="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white text-sm flex items-center">
-                            <i class="fab fa-github mr-1"></i> Code source
+                            <i class="fab fa-github mr-1"></i> <span data-i18n="view_source">Code source</span>
                         </a>
                     </div>
                 </div>
@@ -424,8 +461,8 @@
     <section id="experiences" class="mb-20 fade-in">
         <div class="max-w-4xl mx-auto">
             <div class="terminal-output mb-8">
-                <p class="mono text-gray-600 dark:text-gray-400 command-line">cat experience.txt</p>
-                <h2 class="mono text-2xl font-medium text-gray-900 dark:text-white mt-4 mb-6">Expériences Professionnelles</h2>
+                <p class="mono text-gray-600 dark:text-gray-400 command-line" data-i18n="exp_cmd">cat experience.txt</p>
+                <h2 class="mono text-2xl font-medium text-gray-900 dark:text-white mt-4 mb-6" data-i18n="exp_title">Expériences Professionnelles</h2>
             </div>
 
             <div class="space-y-8">
@@ -441,18 +478,18 @@
                         </div>
                         <div class="bg-gray-50 dark:bg-darkgray p-6 rounded-lg border border-gray-200 dark:border-gray-700 card-hover fade-in">
                             <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
-                                <h3 class="text-lg font-medium text-gray-900 dark:text-white">Développeur Frontend - Stage</h3>
+                                <h3 class="text-lg font-medium text-gray-900 dark:text-white" data-i18n="exp_frontend_dev">Développeur Frontend - Stage</h3>
                                 <span class="text-sm text-gray-500 dark:text-gray-400">Novembre 2024 - Avril 2025</span>
                             </div>
                             <p class="text-gray-600 dark:text-gray-400 mb-3 output-line">
                                 Lumin'ia • Madagascar
                             </p>
-                            <p class="text-gray-700 dark:text-gray-300 output-line">
+                            <p class="text-gray-700 dark:text-gray-300 output-line" data-i18n="exp_luminia_desc">
                                 Participation à la réalisation frontend du site web de l'entreprise. Implémentation d'interfaces réactives et optimisation de l'expérience utilisateur.
                             </p>
                             <div class="flex space-x-3 mt-4">
                                 <a href="https://luminia-mdg.com/" target="_blank" class="text-sm flex items-center">
-                                    <i class="fas fa-external-link-alt mr-1"></i> Voir la démo
+                                    <i class="fas fa-external-link-alt mr-1"></i> <span data-i18n="view_demo">Voir la démo</span>
                                 </a>
                             </div>
                         </div>
@@ -465,11 +502,11 @@
                         </div>
                         <div class="bg-gray-50 dark:bg-darkgray p-6 rounded-lg border border-gray-200 dark:border-gray-700 card-hover fade-in">
                             <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
-                                <h3 class="text-lg font-medium text-gray-900 dark:text-white">Développeur Full Stack - CDD</h3>
+                                <h3 class="text-lg font-medium text-gray-900 dark:text-white" data-i18n="exp_fullstack_dev">Développeur Full Stack - CDD</h3>
                                 <span class="text-sm text-gray-500 dark:text-gray-400">Janvier - Avril 2024</span>
                             </div>
                             <p class="text-gray-600 dark:text-gray-400 mb-3 output-line">ONG Haona Soa • Madagascar</p>
-                            <p class="text-gray-700 dark:text-gray-300 output-line">
+                            <p class="text-gray-700 dark:text-gray-300 output-line" data-i18n="exp_haona_desc">
                                 Contribution au développement d'une application mobile pour la sensibilisation
                                 des femmes au changement climatique dans la région de Haute Matsiatra.
                                 Développement frontend et backend avec Vue.js pour les appareils KaiOS.
@@ -484,17 +521,17 @@
                         </div>
                         <div class="bg-gray-50 dark:bg-darkgray p-6 rounded-lg border border-gray-200 dark:border-gray-700 card-hover fade-in">
                             <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
-                                <h3 class="text-lg font-medium text-gray-900 dark:text-white">Compétitions</h3>
+                                <h3 class="text-lg font-medium text-gray-900 dark:text-white" data-i18n="exp_competitions">Compétitions</h3>
                             </div>
                             <p class="text-gray-700 dark:text-gray-300 output-line mt-4">
                                 <span class="font-medium">40th Cloudflight Coding Contest - Algo - 2024</span><br>
-                                <span class="text-gray-600 dark:text-gray-400">School : 4ème place<br>
-                                    Classic : 4ème place</span>
+                                <span class="text-gray-600 dark:text-gray-400">School : 4ème <span data-i18n="exp_place">place</span><br>
+                                    Classic : 4ème <span data-i18n="exp_place">place</span></span>
                             </p>
                             <p class="text-gray-700 dark:text-gray-300 output-line">
                                 <span class="font-medium">Weekly December GDG On Campus of ISPM (Catégorie dev) -
                                     2023</span><br>
-                                <span class="text-gray-600 dark:text-gray-400">Un projet de 48h pour chaque weekend; 4ème place </span>
+                                <span class="text-gray-600 dark:text-gray-400"><span data-i18n="exp_a_project">Un projet de 48h pour chaque weekend</span>; 4ème <span data-i18n="exp_place">place</span></span>
                             </p>
                         </div>
                     </div>
@@ -509,30 +546,30 @@
     <section class="mb-20 fade-in">
         <div class="max-w-4xl mx-auto">
             <div class="terminal-output mb-8">
-                <p class="mono text-gray-600 dark:text-gray-400 command-line">cat formation.txt</p>
-                <h2 class="mono text-2xl font-medium text-gray-900 dark:text-white mt-4 mb-6">Formations</h2>
+                <p class="mono text-gray-600 dark:text-gray-400 command-line" data-i18n="edu_cmd">cat formation.txt</p>
+                <h2 class="mono text-2xl font-medium text-gray-900 dark:text-white mt-4 mb-6" data-i18n="edu_title">Formations</h2>
             </div>
 
             <div class="space-y-8">
                 <!-- Formation 1 - eTech -->
                 <div class="bg-gray-50 dark:bg-darkgray p-6 rounded-lg border border-gray-200 dark:border-gray-700 card-hover fade-in">
                     <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
-                        <h3 class="text-lg font-medium text-gray-900 dark:text-white">Formation PHP Avancé</h3>
+                        <h3 class="text-lg font-medium text-gray-900 dark:text-white" data-i18n="edu_php_title">Formation PHP Avancé</h3>
                         <span class="text-sm text-gray-500 dark:text-gray-400">2025</span>
                     </div>
                     <p class="text-gray-600 dark:text-gray-400 mb-3 output-line">eTech • Madagascar</p>
-                    <p class="text-gray-700 dark:text-gray-300 output-line">
+                    <p class="text-gray-700 dark:text-gray-300 output-line" data-i18n="edu_php_desc">
                         Formation intensive en développement PHP avec le framework Symfony.
                         Apprentissage des bonnes pratiques, architecture MVC, sécurité et performance des applications web.
                     </p>
                     <div class="mt-4">
-                        <span class="text-sm font-medium text-gray-700 dark:text-gray-300">Compétences acquises:</span>
+                        <span class="text-sm font-medium text-gray-700 dark:text-gray-300" data-i18n="edu_php_skills">Compétences acquises:</span>
                         <ul class="list-disc list-inside text-gray-600 dark:text-gray-400 mt-2 space-y-1">
-                            <li>Développement d'applications web avec Symfony</li>
-                            <li>Conception d'API RESTful</li>
-                            <li>Optimisation des performances</li>
-                            <li>Sécurité des applications web</li>
-                            <li>Tests unitaires et fonctionnels</li>
+                            <li data-i18n="edu_php_skill1">Développement d'applications web avec Symfony</li>
+                            <li data-i18n="edu_php_skill2">Conception d'API RESTful</li>
+                            <li data-i18n="edu_php_skill3">Optimisation des performances</li>
+                            <li data-i18n="edu_php_skill4">Sécurité des applications web</li>
+                            <li data-i18n="edu_php_skill5">Tests unitaires et fonctionnels</li>
                         </ul>
                     </div>
                 </div>
@@ -540,11 +577,11 @@
                 <!-- Formation 2 - ISPM -->
                 <div class="bg-gray-50 dark:bg-darkgray p-6 rounded-lg border border-gray-200 dark:border-gray-700 card-hover fade-in">
                     <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
-                        <h3 class="text-lg font-medium text-gray-900 dark:text-white">Licence en Informatique</h3>
+                        <h3 class="text-lg font-medium text-gray-900 dark:text-white" data-i18n="edu_licence_title">Licence en Informatique</h3>
                         <span class="text-sm text-gray-500 dark:text-gray-400">2021 - 2024</span>
                     </div>
                     <p class="text-gray-600 dark:text-gray-400 mb-3 output-line">Institut Supérieur Polytechnique de Madagascar</p>
-                    <p class="text-gray-700 dark:text-gray-300 output-line">
+                    <p class="text-gray-700 dark:text-gray-300 output-line" data-i18n="edu_licence_desc">
                         Formation complète en informatique avec spécialisation en développement logiciel et systèmes intelligents.
                         Acquisition de compétences en programmation, bases de données et intelligence artificielle.
                     </p>
@@ -553,8 +590,8 @@
                 <!-- Certifications GRID -->
                 <div class="mb-12">
                     <div class="terminal-output mb-8">
-                        <p class="mono text-gray-600 dark:text-gray-400 command-line">ls certifications/</p>
-                        <h2 class="mono text-2xl font-medium text-gray-900 dark:text-white mt-4 mb-6">Certifications</h2>
+                        <p class="mono text-gray-600 dark:text-gray-400 command-line" data-i18n="cert_cmd">ls certifications/</p>
+                        <h2 class="mono text-2xl font-medium text-gray-900 dark:text-white mt-4 mb-6" data-i18n="cert_title">Certifications</h2>
                     </div>
                     <!-- Grille responsive -->
                     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
@@ -588,6 +625,11 @@
     <!--Contact section -->
     <section id="contact" class="mb-20 fade-in">
         <div class="max-w-4xl mx-auto">
+            <div class="terminal-output mb-8">
+                <p class="mono text-gray-600 dark:text-gray-400 command-line">./contact_form.sh</p>
+                <h2 class="mono text-2xl font-medium text-gray-900 dark:text-white mt-4 mb-6" data-i18n="contact_title">Me contacter</h2>
+            </div>
+            
             <div id="toast"
                  class="absolute p-4 rounded-md transform translate-x-full transition-transform duration-300 ease-in-out bg-zinc-200 text-green-800 border border-green-200 shadow-md">
                 <div class="flex items-center">
@@ -601,23 +643,23 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                        <label for="name" class="block text-gray-700 dark:text-gray-300 mb-2">Nom</label>
+                        <label for="name" class="block text-gray-700 dark:text-gray-300 mb-2" data-i18n="name_label">Nom</label>
                         <input type="text" id="name" name="name" required
                                class="w-full bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-600 rounded px-4 py-2 text-gray-900 dark:text-gray-200 focus:outline-none focus:border-gray-500 dark:focus:border-gray-400 transition">
                     </div>
                     <div>
-                        <label for="email" class="block text-gray-700 dark:text-gray-300 mb-2">Email</label>
+                        <label for="email" class="block text-gray-700 dark:text-gray-300 mb-2" data-i18n="email_label">Email</label>
                         <input type="email" id="email" name="email" required
                                class="w-full bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-600 rounded px-4 py-2 text-gray-900 dark:text-gray-200 focus:outline-none focus:border-gray-500 dark:focus:border-gray-400 transition">
                     </div>
                 </div>
                 <div>
-                    <label for="subject" class="block text-gray-700 dark:text-gray-300 mb-2">Sujet</label>
+                    <label for="subject" class="block text-gray-700 dark:text-gray-300 mb-2" data-i18n="subject_label">Sujet</label>
                     <input type="text" id="subject" name="subject" required
                            class="w-full bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-600 rounded px-4 py-2 text-gray-900 dark:text-gray-200 focus:outline-none focus:border-gray-500 dark:focus:border-gray-400 transition">
                 </div>
                 <div>
-                    <label for="message" class="block text-gray-700 dark:text-gray-300 mb-2">Message</label>
+                    <label for="message" class="block text-gray-700 dark:text-gray-300 mb-2" data-i18n="message_label">Message</label>
                     <textarea id="message" name="message" rows="5" required
                               class="w-full bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-600 rounded px-4 py-2 text-gray-900 dark:text-gray-200 focus:outline-none focus:border-gray-500 dark:focus:border-gray-400 transition"></textarea>
                 </div>
@@ -629,7 +671,7 @@
 
                 <button type="submit" id="submitBtn"
                         class="bg-gray-900 dark:bg-gray-700 hover:bg-black dark:hover:bg-gray-600 text-white font-medium py-3 px-6 rounded transition flex items-center justify-center min-h-[48px]">
-                    <i class="fas fa-paper-plane mr-2"></i> Envoyer
+                    <i class="fas fa-paper-plane mr-2"></i> <span data-i18n="send_button">Envoyer</span>
                 </button>
             </form>
         </div>
@@ -643,7 +685,7 @@
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-6 md:mb-0 text-center md:text-left">
                     <h3 class="text-xl font-bold mb-2 gradient-text">RAJAOHARIVONY Haritody Tonny Raldo</h3>
-                    <p class="text-gray-600 dark:text-gray-400 text-sm">
+                    <p class="text-gray-600 dark:text-gray-400 text-sm" data-i18n="footer_tagline">
                         Développeur Fullstack Junior<br>
                         Passionné par la création de solutions innovantes
                     </p>
@@ -668,7 +710,7 @@
             </div>
 
             <div class="mt-12 pt-6 border-t border-gray-200 dark:border-gray-700 text-center">
-                <p class="mono text-gray-500 dark:text-gray-500 text-sm">
+                <p class="mono text-gray-500 dark:text-gray-500 text-sm" data-i18n="footer_copyright">
                     © 2025 RAJAOHARIVONY Haritody Tonny Raldo. Tous droits réservés.<br>
                 </p>
             </div>
@@ -679,22 +721,24 @@
 <!-- Modal de certification amélioré -->
 <div id="certModal" class="fixed top-0 left-0 w-full h-full flex items-center justify-center z-[1000] opacity-0 invisible transition-opacity duration-300 ease-in-out backdrop-blur-md">
     <div class="relative bg-white dark:bg-zinc-900 rounded-xl max-w-[90%] max-h-[90vh] w-[800px] overflow-auto border border-gray-300 dark:border-gray-700">
-        <button id="closeCertModal" class="absolute top-1 right-1 bg-transparent border-none text-2xl text-gray-500 dark:text-gray-400 cursor-pointer w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 hover:text-red-500 dark:hover:text-red-400 hover:bg-black/5 dark:hover:bg-white/5 z-10" aria-label="Fermer le certificat">&times;</button>
+        <button id="closeCertModal" class="absolute top-1 right-1 bg-transparent border-none text-2xl text-gray-500 dark:text-gray-400 cursor-pointer w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 hover:text-red-500 dark:hover:text-red-400 hover:bg-black/5 dark:hover:bg-white/5 z-10" aria-label="Fermer le certificat" data-i18n-attr="aria-label:close_cert">&times;</button>
         <div class="p-6">
             <img id="certModalImg" src="" alt="Certification" class="max-w-full max-h-[70vh] block mx-auto rounded-lg shadow-md">
             <div id="certModalTitle" class="text-xl font-semibold text-gray-800 dark:text-gray-200 my-5 text-center"></div>
-            <a id="certModalLink" href="https://www.credential.net/3bcdfe58-9824-4b78-888c-d0d17f8ce0a7#acc.hq04WnEJ" target="_blank" class="inline-block bg-green-400 hover:bg-green-600 dark:bg-green-500 dark:hover:bg-green-400 text-white font-medium py-2 px-4 rounded-md no-underline text-center mx-auto my-5 transition-all duration-300 hover:-translate-y-0.5 shadow hover:shadow-lg">
+            <a id="certModalLink" href="https://www.credential.net/3bcdfe58-9824-4b78-888c-d0d17f8ce0a7#acc.hq04WnEJ" target="_blank" class="inline-block bg-green-400 hover:bg-green-600 dark:bg-green-500 dark:hover:bg-green-400 text-white font-medium py-2 px-4 rounded-md no-underline text-center mx-auto my-5 transition-all duration-300 hover:-translate-y-0.5 shadow hover:shadow-lg" data-i18n="view_on_accredible">
                 Voir sur Accredible
             </a>
         </div>
     </div>
 </div>
 
+<script src="src/dist/script/translations.js"></script>
+<script src="src/dist/script/language.js"></script>
 <script src="src/dist/script/script.min.js"></script>
 <script src="src/dist/script/form.min.js"></script>
 <script src="src/dist/script/style.js"></script>
 <script>
-        // Fonction améliorée pour ouvrir le modal de certification
+    // Fonction améliorée pour ouvrir le modal de certification
     function openCertModal(img, title, link) {
         const modal = document.getElementById('certModal');
         const modalImg = document.getElementById('certModalImg');
@@ -703,8 +747,8 @@
         
         // Afficher un loader pendant le chargement
         modalImg.src = '';
-        modalImg.alt = 'Chargement...';
-        modalTitle.textContent = 'Chargement en cours...';
+        modalImg.alt = translations[localStorage.getItem('language') || 'fr'].loading || 'Chargement...';
+        modalTitle.textContent = translations[localStorage.getItem('language') || 'fr'].loading_in_progress || 'Chargement en cours...';
         
         // Précharger l'image
         const image = new Image();
@@ -732,9 +776,9 @@
         };
         
         image.onerror = function() {
-            modalTitle.textContent = 'Erreur de chargement';
+            modalTitle.textContent = translations[localStorage.getItem('language') || 'fr'].loading_error || 'Erreur de chargement';
             modalImg.src = '';
-            modalImg.alt = 'Image non disponible';
+            modalImg.alt = translations[localStorage.getItem('language') || 'fr'].image_unavailable || 'Image non disponible';
             modalLink.style.display = 'none';
             modal.classList.remove('invisible', 'opacity-0');
             modal.classList.add('visible', 'opacity-100');
