@@ -50,22 +50,26 @@
         .language-toggle:focus-visible { outline: 2px solid #3b82f6; outline-offset: 2px; }
         .language-toggle:hover { background: rgba(255,255,255,0.2); }
         .flag-icon.opacity-50 { opacity: 0.5; }
-        .page-loader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0f0f0f 100%); display: flex; justify-content: center; align-items: center; z-index: 9999; opacity: 1; visibility: visible; transition: all 0.6s ease-out; overflow: hidden; }
-        .page-loader::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.03) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.02) 0%, transparent 50%); animation: subtle-move 30s ease-in-out infinite; }
+        .page-loader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #f9fafb; display: flex; justify-content: center; align-items: center; z-index: 9999; opacity: 1; visibility: visible; transition: all 0.6s ease-out; overflow: hidden; }
+        .dark .page-loader { background: #0a0a0a; }
         .page-loader.hidden { opacity: 0; visibility: hidden; transform: translateY(-20px); }
-        .loader-content { text-align: center; color: white; position: relative; z-index: 2; }
+        .loader-content { text-align: center; color: #374151; position: relative; z-index: 2; }
+        .dark .loader-content { color: white; }
         
         /* Style pixel art/rétro */
         .pixel-loader { position: relative; margin: 0 auto 40px; display: flex; flex-direction: column; align-items: center; }
         
         /* Icône terminal pixelisée */
-        .pixel-terminal { width: 64px; height: 48px; background: rgba(255, 255, 255, 0.1); border: 2px solid rgba(255, 255, 255, 0.3); position: relative; margin-bottom: 20px; animation: terminal-flicker 2s ease-in-out infinite; }
-        .pixel-terminal::before { content: ''; position: absolute; top: 4px; left: 4px; width: 4px; height: 4px; background: #00ff00; box-shadow: 0 0 0 2px #00ff00, 8px 0 0 0 #00ff00, 16px 0 0 0 #00ff00, 0 8px 0 0 rgba(0, 255, 0, 0.7), 8px 8px 0 0 rgba(0, 255, 0, 0.7), 16px 8px 0 0 rgba(0, 255, 0, 0.7); animation: pixel-text 3s ease-in-out infinite; }
-        .pixel-terminal::after { content: ''; position: absolute; bottom: 6px; right: 6px; width: 6px; height: 2px; background: rgba(255, 255, 255, 0.6); animation: cursor-blink 1s infinite; }
+        .pixel-terminal { width: 64px; height: 48px; background: rgba(55, 65, 81, 0.1); border: 2px solid rgba(55, 65, 81, 0.3); position: relative; margin-bottom: 20px; animation: terminal-flicker 2s ease-in-out infinite; }
+        .dark .pixel-terminal { background: rgba(255, 255, 255, 0.1); border: 2px solid rgba(255, 255, 255, 0.3); }
+        .pixel-terminal::before { content: ''; position: absolute; top: 4px; left: 4px; width: 4px; height: 4px; background: #10b981; box-shadow: 0 0 0 2px #10b981, 8px 0 0 0 #10b981, 16px 0 0 0 #10b981, 0 8px 0 0 rgba(16, 185, 129, 0.7), 8px 8px 0 0 rgba(16, 185, 129, 0.7), 16px 8px 0 0 rgba(16, 185, 129, 0.7); animation: pixel-text 3s ease-in-out infinite; }
+        .pixel-terminal::after { content: ''; position: absolute; bottom: 6px; right: 6px; width: 6px; height: 2px; background: rgba(55, 65, 81, 0.6); animation: cursor-blink 1s infinite; }
+        .dark .pixel-terminal::after { background: rgba(255, 255, 255, 0.6); }
         
         /* Barre de progression pixelisée */
         .pixel-progress { display: flex; gap: 2px; justify-content: center; align-items: center; margin: 20px 0; }
-        .pixel-block { width: 8px; height: 8px; background: rgba(255, 255, 255, 0.2); position: relative; animation: pixel-fill 4s ease-in-out infinite; }
+        .pixel-block { width: 8px; height: 8px; background: rgba(55, 65, 81, 0.2); position: relative; animation: pixel-fill 4s ease-in-out infinite; }
+        .dark .pixel-block { background: rgba(255, 255, 255, 0.2); }
         .pixel-block:nth-child(1) { animation-delay: 0s; }
         .pixel-block:nth-child(2) { animation-delay: 0.2s; }
         .pixel-block:nth-child(3) { animation-delay: 0.4s; }
@@ -79,7 +83,8 @@
         
         /* Éléments décoratifs pixelisés */
         .pixel-particles { position: absolute; width: 100%; height: 100%; pointer-events: none; }
-        .pixel-particle { position: absolute; width: 4px; height: 4px; background: rgba(255, 255, 255, 0.4); animation: pixel-float 6s ease-in-out infinite; }
+        .pixel-particle { position: absolute; width: 4px; height: 4px; background: rgba(55, 65, 81, 0.4); animation: pixel-float 6s ease-in-out infinite; }
+        .dark .pixel-particle { background: rgba(255, 255, 255, 0.4); }
         .pixel-particle:nth-child(1) { left: 20%; top: 25%; animation-delay: 0s; }
         .pixel-particle:nth-child(2) { left: 80%; top: 35%; animation-delay: -1.5s; }
         .pixel-particle:nth-child(3) { left: 30%; top: 65%; animation-delay: -3s; }
@@ -87,17 +92,22 @@
         .pixel-particle:nth-child(5) { left: 50%; top: 15%; animation-delay: -2s; }
         .pixel-particle:nth-child(6) { left: 15%; top: 55%; animation-delay: -3.5s; }
         
-        .loader-text { font-family: 'IBM Plex Mono', monospace; font-size: 16px; font-weight: 400; margin-bottom: 8px; color: rgba(255, 255, 255, 0.9); letter-spacing: 2px; animation: text-glitch 3s ease-in-out infinite; text-shadow: 0 0 5px rgba(0, 255, 0, 0.3); }
-        .loader-subtitle { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: rgba(255, 255, 255, 0.5); letter-spacing: 1px; text-transform: uppercase; }
+        .loader-text { font-family: 'IBM Plex Mono', monospace; font-size: 16px; font-weight: 400; margin-bottom: 8px; color: #374151; letter-spacing: 2px; animation: text-glitch 3s ease-in-out infinite; }
+        .dark .loader-text { color: rgba(255, 255, 255, 0.9); }
+        .loader-subtitle { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #6b7280; letter-spacing: 1px; text-transform: uppercase; }
+        .dark .loader-subtitle { color: rgba(255, 255, 255, 0.5); }
         
         /* Animations pixel art */
-        @keyframes terminal-flicker { 0%, 100% { opacity: 1; box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); } 50% { opacity: 0.95; box-shadow: 0 0 15px rgba(0, 255, 0, 0.2); } }
+        @keyframes terminal-flicker { 0%, 100% { opacity: 1; box-shadow: 0 0 10px rgba(55, 65, 81, 0.1); } 50% { opacity: 0.95; box-shadow: 0 0 15px rgba(16, 185, 129, 0.2); } }
+        .dark .pixel-terminal { animation: terminal-flicker-dark 2s ease-in-out infinite; }
+        @keyframes terminal-flicker-dark { 0%, 100% { opacity: 1; box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); } 50% { opacity: 0.95; box-shadow: 0 0 15px rgba(16, 185, 129, 0.2); } }
         @keyframes pixel-text { 0%, 100% { opacity: 1; } 25% { opacity: 0.8; } 50% { opacity: 1; } 75% { opacity: 0.9; } }
         @keyframes cursor-blink { 0%, 50% { opacity: 1; } 51%, 100% { opacity: 0; } }
-        @keyframes pixel-fill { 0%, 20% { background: rgba(255, 255, 255, 0.2); transform: scale(1); } 40% { background: rgba(0, 255, 0, 0.6); transform: scale(1.1); } 60%, 100% { background: rgba(0, 255, 0, 0.8); transform: scale(1); box-shadow: 0 0 4px rgba(0, 255, 0, 0.5); } }
+        @keyframes pixel-fill { 0%, 20% { background: rgba(55, 65, 81, 0.2); transform: scale(1); } 40% { background: rgba(16, 185, 129, 0.6); transform: scale(1.1); } 60%, 100% { background: rgba(16, 185, 129, 0.8); transform: scale(1); box-shadow: 0 0 4px rgba(16, 185, 129, 0.5); } }
+        .dark .pixel-block { background: rgba(255, 255, 255, 0.2); }
+        @keyframes pixel-fill-dark { 0%, 20% { background: rgba(255, 255, 255, 0.2); transform: scale(1); } 40% { background: rgba(16, 185, 129, 0.6); transform: scale(1.1); } 60%, 100% { background: rgba(16, 185, 129, 0.8); transform: scale(1); box-shadow: 0 0 4px rgba(16, 185, 129, 0.5); } }
         @keyframes pixel-float { 0%, 100% { opacity: 0.4; transform: translateY(0px) scale(1); } 25% { opacity: 0.7; transform: translateY(-4px) scale(1.1); } 50% { opacity: 0.5; transform: translateY(-2px) scale(0.9); } 75% { opacity: 0.6; transform: translateY(-6px) scale(1.05); } }
         @keyframes text-glitch { 0%, 100% { opacity: 1; transform: translateX(0); } 10% { opacity: 0.9; transform: translateX(-1px); } 20% { opacity: 1; transform: translateX(1px); } 30% { opacity: 0.95; transform: translateX(0); } }
-        @keyframes subtle-move { 0%, 100% { transform: translateX(0px) translateY(0px); } 25% { transform: translateX(5px) translateY(-5px); } 50% { transform: translateX(-5px) translateY(5px); } 75% { transform: translateX(5px) translateY(5px); } }
         .language-transition { opacity: 0; transform: translateY(20px); transition: all 0.3s ease-out; }
         .language-transition.active { opacity: 1; transform: translateY(0); }
         .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.6s ease-out; }
