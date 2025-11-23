@@ -182,6 +182,7 @@
         <a href="#projects" class="w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600 hover:bg-green-500 dark:hover:bg-green-500 nav-dot" data-tooltip="Projets" data-i18n-attr="data-tooltip:nav_projects" aria-label="Projets"></a>
         <a href="#experiences" class="w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600 hover:bg-green-500 dark:hover:bg-green-500 nav-dot" data-tooltip="Expérience" data-i18n-attr="data-tooltip:nav_experience" aria-label="Expérience"></a>
         <a href="#contact" class="w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600 hover:bg-green-500 dark:hover:bg-green-500 nav-dot" data-tooltip="Contact" data-i18n-attr="data-tooltip:nav_contact" aria-label="Contact"></a>
+        <a href="#game" class="w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600 hover:bg-green-500 dark:hover:bg-green-500 nav-dot" data-tooltip="Jeu" data-i18n-attr="data-tooltip:nav_game" aria-label="Jeu"></a>
     </div>
 </nav>
 
@@ -766,6 +767,26 @@
     </section>
 
     <div class="section-divider"></div>
+
+    <!-- Game section -->
+    <section id="game" class="mb-20 fade-in hidden md:block">
+        <div class="max-w-4xl mx-auto">
+            <div class="terminal-output mb-8">
+                <p class="mono text-gray-600 dark:text-gray-400 command-line">./play-arcade.sh</p>
+                <h2 class="mono text-2xl font-medium text-gray-900 dark:text-white mt-4 mb-6">Arcade Game</h2>
+            </div>
+
+            <div class="bg-gray-50 dark:bg-darkgray p-6 rounded-lg border border-gray-200 dark:border-gray-700 card-hover fade-in cursor-pointer hover:shadow-lg transition-shadow" onclick="openGameModal()">
+                <div class="text-center">
+                    <i class="fas fa-gamepad text-3xl text-green-500 mb-3"></i>
+                    <h3 class="text-lg font-semibold mb-2">Galactic Defender</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">Jeu de tir spatial rétro</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
     <!--Contact section -->
     <section id="contact" class="mb-20 fade-in">
         <div class="max-w-4xl mx-auto">
@@ -873,6 +894,14 @@
                 Voir sur Accredible
             </a>
         </div>
+    </div>
+</div>
+
+<!-- Modal de jeu -->
+<div id="gameModal" class="fixed inset-0 z-[1000] opacity-0 invisible transition-opacity duration-300 ease-in-out backdrop-blur-md">
+    <div class="relative w-full h-full bg-white dark:bg-zinc-900 overflow-hidden">
+        <button id="closeGameModal" class="absolute top-4 right-4 bg-transparent border-none text-2xl text-gray-500 dark:text-gray-400 cursor-pointer w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 hover:text-red-500 dark:hover:text-red-400 hover:bg-black/5 dark:hover:bg-white/5 z-10" aria-label="Fermer le jeu">&times;</button>
+        <iframe src="arcade.html" class="w-full h-full border-0"></iframe>
     </div>
 </div>
 <script src="src/dist/script/translations.js" defer></script>
@@ -1006,6 +1035,36 @@
     };
     document.addEventListener('keydown', function (e) {
         const modal = document.getElementById('certModal');
+        if (e.key === 'Escape' && modal.classList.contains('visible')) {
+            modal.classList.add('invisible', 'opacity-0');
+            modal.classList.remove('visible', 'opacity-100');
+            document.body.classList.remove('overflow-hidden');
+        }
+    });
+
+    function openGameModal() {
+        const modal = document.getElementById('gameModal');
+        modal.classList.remove('invisible', 'opacity-0');
+        modal.classList.add('visible', 'opacity-100');
+        document.body.classList.add('overflow-hidden');
+    }
+
+    document.getElementById('closeGameModal').onclick = function () {
+        document.getElementById('gameModal').classList.add('invisible', 'opacity-0');
+        document.getElementById('gameModal').classList.remove('visible', 'opacity-100');
+        document.body.classList.remove('overflow-hidden');
+    };
+
+    document.getElementById('gameModal').onclick = function (e) {
+        if (e.target === this) {
+            this.classList.add('invisible', 'opacity-0');
+            this.classList.remove('visible', 'opacity-100');
+            document.body.classList.remove('overflow-hidden');
+        }
+    };
+
+    document.addEventListener('keydown', function (e) {
+        const modal = document.getElementById('gameModal');
         if (e.key === 'Escape' && modal.classList.contains('visible')) {
             modal.classList.add('invisible', 'opacity-0');
             modal.classList.remove('visible', 'opacity-100');
