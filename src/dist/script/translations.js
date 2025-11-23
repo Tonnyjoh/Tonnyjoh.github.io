@@ -3,7 +3,7 @@ const translations = {
   en: {
     // Header & About
     "whoami": "whoami",
-    "developer_title": "Junior Fullstack Developer",
+    "developer_title": "Junior Full-Stack Developer",
     "about_text": "Motivated and curious junior developer, passionate about continuous learning and solving complex problems. Specialized in Electronics, Computer Systems and Artificial Intelligence, I strive for excellence in all my projects.",
     "contact_sh": "./contact.sh",
     
@@ -54,13 +54,24 @@ const translations = {
     // Experience section
     "exp_cmd": "cat experience.txt",
     "exp_title": "Professional Experience",
-    "exp_frontend_dev": "Frontend Developer - Internship",
-    "exp_fullstack_dev": "Full Stack Developer - Fixed-term Contract",
+    "exp_etech_dev": "Full-Stack Developer - Internship",
+    "exp_etech_desc": "Internship in Full-Stack development at a technology company. Participation in the development of modern web applications and practical application of advanced technologies.",
+    "exp_frontend_dev": "Full-Stack Developer - Internship",
+    "exp_fullstack_dev": "Full-Stack Developer - Fixed-term Contract",
     "exp_luminia_desc": "Participation in the frontend implementation of the company's website. Implementation of responsive interfaces and optimization of user experience.",
     "exp_haona_desc": "Contribution to the development of a mobile application for raising awareness among women about climate change in the Haute Matsiatra region. Frontend and backend development with Vue.js for KaiOS devices.",
     "exp_competitions": "Competitions",
     "exp_place": "place",
     "exp_a_project": "A 48h project for each weekend",
+    
+    // Dates
+    "date_etech": "May 2024 - August 2024",
+    "date_luminia": "November 2024 - November 2025",
+    "date_haona": "January - April 2024",
+    
+    // Education dates
+    "date_php_training": "May 2025",
+    "date_licence": "2021 - 2025",
     
     // Education section
     "edu_cmd": "cat formation.txt",
@@ -73,7 +84,7 @@ const translations = {
     "edu_php_skill3": "Performance optimization",
     "edu_php_skill4": "Web application security",
     "edu_php_skill5": "Unit and functional testing",
-    "edu_licence_title": "Bachelor in Computer Science",
+    "edu_licence_title": "Bachelor in Computer Science and Telecommunications",
     "edu_licence_desc": "Complete computer science training with specialization in software development and intelligent systems. Acquisition of skills in programming, databases and artificial intelligence.",
     
     // Certifications
@@ -90,7 +101,7 @@ const translations = {
     "send_button": "Send",
     
     // Footer
-    "footer_tagline": "Junior Fullstack Developer<br>Passionate about creating innovative solutions",
+    "footer_tagline": "Junior Full-Stack Developer<br>Passionate about creating innovative solutions",
     "footer_copyright": "© 2025 RAJAOHARIVONY Haritody Tonny Raldo. All rights reserved.",
     
     // Modal
@@ -103,7 +114,7 @@ const translations = {
   fr: {
     // Header & About
     "whoami": "whoami",
-    "developer_title": "Développeur Fullstack Junior",
+    "developer_title": "Développeur Full-Stack Junior",
     "about_text": "Développeur junior motivé et curieux, passionné par l'apprentissage continu et la résolution de problèmes complexes. Spécialisé en Électronique, Système Informatique et Intelligence Artificielle, je m'efforce d'atteindre l'excellence dans tous mes projets.",
     "contact_sh": "./contact.sh",
     
@@ -154,13 +165,24 @@ const translations = {
     // Experience section
     "exp_cmd": "cat experience.txt",
     "exp_title": "Expériences Professionnelles",
-    "exp_frontend_dev": "Développeur Frontend - Stage",
-    "exp_fullstack_dev": "Développeur Full Stack - CDD",
+    "exp_etech_dev": "Développeur Full-Stack - Stage",
+    "exp_etech_desc": "Stage de développement Full-Stack dans une entreprise technologique. Participation au développement d'applications web modernes et mise en pratique des technologies avancées.",
+    "exp_frontend_dev": "Développeur Full-Stack",
+    "exp_fullstack_dev": "Développeur Full-Stack - CDD",
     "exp_luminia_desc": "Participation à la réalisation frontend du site web de l'entreprise. Implémentation d'interfaces réactives et optimisation de l'expérience utilisateur.",
     "exp_haona_desc": "Contribution au développement d'une application mobile pour la sensibilisation des femmes au changement climatique dans la région de Haute Matsiatra. Développement frontend et backend avec Vue.js pour les appareils KaiOS.",
     "exp_competitions": "Compétitions",
     "exp_place": "place",
     "exp_a_project": "Un projet de 48h pour chaque weekend",
+    
+    // Dates
+    "date_etech": "Mai 2024 - Août 2024",
+    "date_luminia": "Novembre 2024 - Novembre 2025",
+    "date_haona": "Janvier - Avril 2024",
+    
+    // Dates formation
+    "date_php_training": "Mai 2025",
+    "date_licence": "2021 - 2025",
     
     // Education section
     "edu_cmd": "cat formation.txt",
@@ -173,7 +195,7 @@ const translations = {
     "edu_php_skill3": "Optimisation des performances",
     "edu_php_skill4": "Sécurité des applications web",
     "edu_php_skill5": "Tests unitaires et fonctionnels",
-    "edu_licence_title": "Licence en Informatique",
+    "edu_licence_title": "Licence en Informatique et Télécommunication",
     "edu_licence_desc": "Formation complète en informatique avec spécialisation en développement logiciel et systèmes intelligents. Acquisition de compétences en programmation, bases de données et intelligence artificielle.",
     
     // Certifications
@@ -190,7 +212,7 @@ const translations = {
     "send_button": "Envoyer",
     
     // Footer
-    "footer_tagline": "Développeur Fullstack Junior<br>Passionné par la création de solutions innovantes",
+    "footer_tagline": "Développeur Full-Stack Junior<br>Passionné par la création de solutions innovantes",
     "footer_copyright": "© 2025 RAJAOHARIVONY Haritody Tonny Raldo. Tous droits réservés.",
     
     // Modal
