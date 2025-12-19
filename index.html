@@ -446,6 +446,32 @@
             </div>
 
             <div class="grid grid-cols-1 gap-6">
+                <!-- Project Lantorian -->
+                <div class="bg-gray-50 dark:bg-darkgray p-6 rounded-lg border border-gray-200 dark:border-gray-700 card-hover project-card">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-medium text-gray-900 dark:text-white" data-i18n="saas_title">Lantorian SaaS</h3>
+                        <span class="text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-2 py-1 rounded" data-i18n="project_type_personal">Projet Personnel</span>
+                    </div>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4 output-line" data-i18n="saas_desc">
+                        Plateforme SaaS innovante de création de contenu IA. Générez des vidéos, visuels et landing pages
+                        pour les réseaux sociaux (YouTube, TikTok, Instagram, LinkedIn...) en seulement 60 secondes avec un seul prompt.
+                        Interface moderne développée en Next.js avec intégration d'IA pour l'automatisation complète du workflow créatif.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-2 py-1 rounded">Next.js</span>
+                        <span class="text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-2 py-1 rounded">React</span>
+                        <span class="text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-2 py-1 rounded">IA / Machine Learning</span>
+                        <span class="text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-2 py-1 rounded">API REST</span>
+                        <span class="text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-2 py-1 rounded">Tailwind CSS</span>
+                    </div>
+                    <div class="flex space-x-3">
+                        <a href="https://saas.lantorian.com/en" target="_blank"
+                           class="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white text-sm flex items-center">
+                            <i class="fas fa-external-link-alt mr-1"></i> Voir le site
+                        </a>
+                    </div>
+                </div>
+
                 <div class="bg-gray-50 dark:bg-darkgray p-6 rounded-lg border border-gray-200 dark:border-gray-700 card-hover project-card">
                     <div class="flex justify-between items-start mb-4">
                         <h3 class="text-xl font-medium text-gray-900 dark:text-white" data-i18n="gym_app_title">Application Web de Référencement des Salles de Sport à Antananarivo</h3>
@@ -678,6 +704,19 @@
             </div>
 
             <div class="space-y-8">
+
+                <!-- Formation 2 - Master IT University -->
+                <div class="bg-gray-50 dark:bg-darkgray p-6 rounded-lg border border-gray-200 dark:border-gray-700 card-hover fade-in">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                        <h3 class="text-lg font-medium text-gray-900 dark:text-white" data-i18n="edu_master_title">MASTER 1</h3>
+                        <span class="text-sm text-gray-500 dark:text-gray-400" data-i18n="date_master">2025 - en cours</span>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 mb-3 output-line">IT University</p>
+                    <p class="text-gray-700 dark:text-gray-300 output-line" data-i18n="edu_master_desc">
+                        Cycle Master en informatique à IT University, spécialisation en développement logiciel avancé, IA et systèmes intelligents. Approfondissement en architecture logicielle, cloud, data science et gestion de projet.
+                    </p>
+                </div>
+
                 <!-- Formation 1 - eTech -->
                 <div class="bg-gray-50 dark:bg-darkgray p-6 rounded-lg border border-gray-200 dark:border-gray-700 card-hover fade-in">
                     <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
@@ -701,7 +740,7 @@
                     </div>
                 </div>
 
-                <!-- Formation 2 - ISPM -->
+                <!-- Formation précédente -->
                 <div class="bg-gray-50 dark:bg-darkgray p-6 rounded-lg border border-gray-200 dark:border-gray-700 card-hover fade-in">
                     <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
                         <h3 class="text-lg font-medium text-gray-900 dark:text-white" data-i18n="edu_licence_title">Licence en Informatique et Télécommunication</h3>
@@ -713,7 +752,6 @@
                         Acquisition de compétences en programmation, bases de données et intelligence artificielle.
                     </p>
                 </div>
-
                 <!-- Certifications GRID -->
                 <div class="mb-12">
                     <div class="terminal-output mb-8">
@@ -790,7 +828,7 @@
     <!--Contact section -->
     <section id="contact" class="mb-20 fade-in">
         <div class="max-w-4xl mx-auto">
-            <div class="terminal-output mb-8">
+            <div class="terminal-output mb-8"></div>
                 <p class="mono text-gray-600 dark:text-gray-400 command-line">./contact_form.sh</p>
                 <h2 class="mono text-2xl font-medium text-gray-900 dark:text-white mt-4 mb-6" data-i18n="contact_title">Me contacter</h2>
             </div>
@@ -884,7 +922,7 @@
 </footer>
 
 <!-- Modal de certification amélioré -->
-<div id="certModal" class="fixed top-0 left-0 w-full h-full flex items-center justify-center z-[1000] opacity-0 invisible transition-opacity duration-300 ease-in-out backdrop-blur-md">
+<div id="certModal" class="fixed top-0 left-0 w-full h-full flex items-center justify-center z-[1000] opacity-0 invisible transition-opacity duration-300 ease-in-out backdrop-blur-md"></div>
     <div class="relative bg-white dark:bg-zinc-900 rounded-xl max-w-[90%] max-h-[90vh] w-[800px] overflow-auto border border-gray-300 dark:border-gray-700">
         <button id="closeCertModal" class="absolute top-1 right-1 bg-transparent border-none text-2xl text-gray-500 dark:text-gray-400 cursor-pointer w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 hover:text-red-500 dark:hover:text-red-400 hover:bg-black/5 dark:hover:bg-white/5 z-10" aria-label="Fermer le certificat" data-i18n-attr="aria-label:close_cert">&times;</button>
         <div class="p-6">
