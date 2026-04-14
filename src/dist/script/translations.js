@@ -3,7 +3,7 @@ const translations = {
   en: {
     // Header & About
     "whoami": "whoami",
-    "developer_title": "Junior Full-Stack Developer",
+    "developer_title": "Full-Stack Developer",
     "about_text": "Motivated and curious junior developer, passionate about continuous learning and solving complex problems. Specialized in Electronics, Computer Systems and Artificial Intelligence, I strive for excellence in all my projects.",
     "contact_sh": "./contact.sh",
     
@@ -34,7 +34,17 @@ const translations = {
     // Gym app project
     "gym_app_title": "Web Application for Gym Referencing in Antananarivo",
     "gym_app_desc": "Created a web application to centralize gyms in Antananarivo, allowing users to find, compare and book gyms. Complete development with Next.js for the front-end and Laravel for the back-end, connected to a MySQL database.",
-    
+
+    // Consulting & training platform project
+    "consulting_bo_title": "B2B Training & Consulting Platform",
+    "consulting_bo_desc": "Full-stack web platform for a Malagasy consulting and training company, featuring a complete backoffice for managing content, services, events, and client interactions.",
+    "consulting_bo_date": "Jan – Feb 2026",
+
+    // Tourism accommodation showcase project
+    "chalet_vitrine_title": "Tourism Accommodation Website",
+    "chalet_vitrine_desc": "Showcase website for a chalet and tourist accommodation, presenting rooms, services, and facilities to potential guests.",
+    "chalet_vitrine_date": "December 2025",
+
     // Garden project
     "garden_title": "Garden - Final Year Project",
     "garden_desc": "Design of an autonomous greenhouse with real-time monitoring via a mobile application. Responsible for the complete design and implementation of the application.",
@@ -108,7 +118,7 @@ const translations = {
     "send_button": "Send",
     
     // Footer
-    "footer_tagline": "Junior Full-Stack Developer<br>Passionate about creating innovative solutions",
+    "footer_tagline": "Full-Stack Developer<br>Passionate about creating innovative solutions",
     "footer_copyright": "© 2025 RAJAOHARIVONY Haritody Tonny Raldo. All rights reserved.",
     
     // Modal
@@ -121,7 +131,7 @@ const translations = {
   fr: {
     // Header & About
     "whoami": "whoami",
-    "developer_title": "Développeur Full-Stack Junior",
+    "developer_title": "Développeur Full-Stack",
     "about_text": "Développeur junior motivé et curieux, passionné par l'apprentissage continu et la résolution de problèmes complexes. Spécialisé en Électronique, Système Informatique et Intelligence Artificielle, je m'efforce d'atteindre l'excellence dans tous mes projets.",
     "contact_sh": "./contact.sh",
     
@@ -152,7 +162,17 @@ const translations = {
     // Gym app project
     "gym_app_title": "Application Web de Référencement des Salles de Sport à Antananarivo",
     "gym_app_desc": "Création d'une application web pour centraliser les salles de sport à Antananarivo, permettant aux utilisateurs de trouver, comparer et réserver des salles de sport. Développement complet avec Next.js pour le front-end et Laravel pour le back-end, connecté à une base de données MySQL.",
-    
+
+    // Plateforme B2B formation et conseil
+    "consulting_bo_title": "Plateforme B2B Formation & Conseil",
+    "consulting_bo_desc": "Plateforme web full-stack pour une entreprise malgache de formation et de conseil, avec un backoffice complet pour la gestion du contenu, des services, des événements et des interactions clients.",
+    "consulting_bo_date": "Jan – Fév 2026",
+
+    // Site vitrine hébergement touristique
+    "chalet_vitrine_title": "Site Vitrine Hébergement Touristique",
+    "chalet_vitrine_desc": "Site vitrine pour un chalet et hébergement touristique, présentant les chambres, services et équipements aux clients potentiels.",
+    "chalet_vitrine_date": "Décembre 2025",
+
     // Garden project
     "garden_title": "Garden - Projet de fin d'études",
     "garden_desc": "Conception d'une serre autonome avec suivi en temps réel via une application mobile. Responsable de la conception et réalisation complète de l'application.",
@@ -226,7 +246,7 @@ const translations = {
     "send_button": "Envoyer",
     
     // Footer
-    "footer_tagline": "Développeur Full-Stack Junior<br>Passionné par la création de solutions innovantes",
+    "footer_tagline": "Développeur Full-Stack<br>Passionné par la création de solutions innovantes",
     "footer_copyright": "© 2025 RAJAOHARIVONY Haritody Tonny Raldo. Tous droits réservés.",
     
     // Modal
