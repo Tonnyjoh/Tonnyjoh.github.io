@@ -64,19 +64,27 @@ const translations = {
     // Experience section
     "exp_cmd": "cat experience.txt",
     "exp_title": "Professional Experience",
+    "exp_lantorian_dev": "Full-Stack Developer - CDI",
+    "exp_lantorian_desc": "Full responsibility for the complete development cycle of web applications: from back-end (architecture, API, databases) to front-end (dynamic interfaces, UX/UI).",
+    "exp_freelance_dev": "Freelance Developer",
+    "exp_freelance_desc": "Freelance web development projects:",
+    "exp_freelance_p1": "Tourism Accommodation Website - Dec 2025 · Next.js, React, Tailwind CSS",
+    "exp_freelance_p2": "B2B Training & Consulting Platform - Jan–Feb 2026 · Next.js, Laravel, PostgreSQL, Tailwind CSS",
     "exp_etech_dev": "Full-Stack Developer - Internship",
-    "exp_etech_desc": "Internship in Full-Stack development at a technology company. Participation in the development of modern web applications and practical application of advanced technologies.",
+    "exp_etech_desc": "Development of a real-time monitoring web application (security-focused) with a Symfony back-end, using Mercure for real-time server push to the front-end. Design of a reactive UX with React for a dynamic and modern interface. Implementation of bidirectional client/server communications (pub/sub, live updates without manual refresh).",
     "exp_frontend_dev": "Full-Stack Developer - CDI",
     "exp_fullstack_dev": "Full-Stack Developer - Fixed-term Contract",
-    "exp_luminia_desc": "Participation in the frontend implementation of the company's website. Implementation of responsive interfaces and optimization of user experience.",
-    "exp_haona_desc": "Contribution to the development of a mobile application for raising awareness among women about climate change in the Haute Matsiatra region. Frontend and backend development with Vue.js for KaiOS devices.",
+    "exp_luminia_desc": "Participation in the frontend development of the company website. Implementation of reactive interfaces and UX optimization. Creation of a web app to find, compare and book gyms in Antananarivo, built with Next.js, Laravel, MySQL and OpenStreetMap.",
+    "exp_haona_desc": "Contribution to a mobile app raising awareness about climate change among women in the Haute Matsiatra region. Development by platform: KaiOS (Vue.js) – team of 2 (back & front); Android (Ionic-React) – team of 4 (front).",
     "exp_competitions": "Competitions",
     "exp_place": "place",
     "exp_a_project": "A 48h project for each weekend",
-    
+
     // Dates
-    "date_etech": "May 2024 - August 2024",
-    "date_luminia": "November 2024 - November 2025",
+    "date_lantorian": "October 2025 - present",
+    "date_freelance": "December 2025 - February 2026",
+    "date_etech": "May 2025 - August 2025",
+    "date_luminia": "November 2024 - October 2025",
     "date_haona": "January - April 2024",
     
     // Education dates
@@ -192,19 +200,27 @@ const translations = {
     // Experience section
     "exp_cmd": "cat experience.txt",
     "exp_title": "Expériences Professionnelles",
+    "exp_lantorian_dev": "Développeur Full-Stack - CDI",
+    "exp_lantorian_desc": "Conception et développement d'applications web : prise en charge de l'intégralité du cycle de développement, du back-end (architecture, API, bases de données) au front-end (interfaces dynamiques, UX/UI).",
+    "exp_freelance_dev": "Développeur Freelance",
+    "exp_freelance_desc": "Développement de projets web en freelance :",
+    "exp_freelance_p1": "Site Vitrine Hébergement Touristique - Déc 2025 · Next.js, React, Tailwind CSS",
+    "exp_freelance_p2": "Plateforme B2B Formation & Conseil - Jan–Fév 2026 · Next.js, Laravel, PostgreSQL, Tailwind CSS",
     "exp_etech_dev": "Développeur Full-Stack - Stage",
-    "exp_etech_desc": "Stage de développement Full-Stack dans une entreprise technologique. Participation au développement d'applications web modernes et mise en pratique des technologies avancées.",
+    "exp_etech_desc": "Développement d'une application web de surveillance en temps réel (destinée à la sécurité) avec un back-end en Symfony, utilisant Mercure pour le push temps réel vers le front-end. Conception d'une UX réactive avec React pour une interface dynamique, fluide et moderne. Implémentation de communications bidirectionnelles côté client/serveur (pub/sub, actualisation live sans rafraîchissement manuel).",
     "exp_frontend_dev": "Développeur Full-Stack - CDI",
     "exp_fullstack_dev": "Développeur Full-Stack - CDD",
-    "exp_luminia_desc": "Participation à la réalisation frontend du site web de l'entreprise. Implémentation d'interfaces réactives et optimisation de l'expérience utilisateur.",
-    "exp_haona_desc": "Contribution au développement d'une application mobile pour la sensibilisation des femmes au changement climatique dans la région de Haute Matsiatra. Développement frontend et backend avec Vue.js pour les appareils KaiOS.",
+    "exp_luminia_desc": "Participation à la réalisation frontend du site web de l'entreprise. Implémentation d'interfaces réactives et optimisation de l'expérience utilisateur. Création d'une application web pour trouver, comparer et réserver des salles de sport à Antananarivo, développée avec Next.js, Laravel, MySQL et OpenStreetMap.",
+    "exp_haona_desc": "Contribution au développement d'une application mobile de sensibilisation des femmes au changement climatique dans la région de Haute Matsiatra. Développement selon la plateforme : KaiOS (Vue.js) – équipe de 2 (back & front) ; Android (Ionic-React) – équipe de 4 (front).",
     "exp_competitions": "Compétitions",
     "exp_place": "place",
     "exp_a_project": "Un projet de 48h pour chaque weekend",
-    
+
     // Dates
-    "date_etech": "Mai 2024 - Août 2024",
-    "date_luminia": "Novembre 2024 - Novembre 2025",
+    "date_lantorian": "Octobre 2025 - présent",
+    "date_freelance": "Décembre 2025 - Février 2026",
+    "date_etech": "Mai 2025 - Août 2025",
+    "date_luminia": "Novembre 2024 - Octobre 2025",
     "date_haona": "Janvier - Avril 2024",
     
     // Dates formation
