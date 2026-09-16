@@ -71,4 +71,4 @@ window.addEventListener('load', () => {
     setTimeout(typeWriter, 500);
 });
 
-document.querySelector('nav a[href="#about"]').classList.add('active-nav');
+document.querySelector('nav a[href="#about"]')?.classList.add('active-nav');

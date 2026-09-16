@@ -1,0 +1,41 @@
+/* =============================================================================
+   Bulle de verre du hero. Feuille chargée après output.css : quelques règles
+   ciblées, rien d'autre sur la page n'est touché. Voir src/dist/script/orb.js
+   ============================================================================= */
+
+/* Calque fixe derrière toute la page : la bulle traverse le site au défilement.
+   Le sol de la scène est exactement le fond du site, il n'y a donc pas de couture. */
+.orb-hero {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.orb-hero canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.orb-hero canvas.is-ready { opacity: 1; }
+
+/* Le bloc terminal laisse deviner la bulle derrière lui. Sans scène (téléphone,
+   WebGL indisponible), il garde son fond plein d'origine. */
+.orb-on .orb-hero-card {
+  background: rgba(243, 244, 246, 0.66);
+  backdrop-filter: blur(8px) saturate(118%);
+  -webkit-backdrop-filter: blur(8px) saturate(118%);
+  border: 1px solid rgba(17, 24, 39, 0.07);
+}
+
+.dark.orb-on .orb-hero-card {
+  background: rgba(18, 18, 18, 0.55);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orb-hero canvas { transition-duration: 0.01ms; }
+}

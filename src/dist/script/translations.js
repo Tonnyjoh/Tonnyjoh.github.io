@@ -4,7 +4,7 @@ const translations = {
     // Header & About
     "whoami": "whoami",
     "developer_title": "Full-Stack Developer",
-    "about_text": "Motivated and curious junior developer, passionate about continuous learning and solving complex problems. Specialized in Electronics, Computer Systems and Artificial Intelligence, I strive for excellence in all my projects.",
+    "about_text": "Full-stack developer with a solid track record of delivering end-to-end web applications, from architecture and API design through to fast, responsive interfaces. I turn complex business needs into scalable, production-ready solutions, with constant attention to code quality, technical excellence and measurable impact.",
     "contact_sh": "./contact.sh",
     
     // Navigation
@@ -89,7 +89,7 @@ const translations = {
     
     // Education dates
     "date_php_training": "May 2025",
-    "date_licence": "2021 - 2025",
+    "date_licence": "2021 - 2024",
     "date_master": "2025 - present",
     
     // Education section
@@ -140,7 +140,7 @@ const translations = {
     // Header & About
     "whoami": "whoami",
     "developer_title": "Développeur Full-Stack",
-    "about_text": "Développeur junior motivé et curieux, passionné par l'apprentissage continu et la résolution de problèmes complexes. Spécialisé en Électronique, Système Informatique et Intelligence Artificielle, je m'efforce d'atteindre l'excellence dans tous mes projets.",
+    "about_text": "Développeur full-stack avec un solide historique de livraison d'applications web de bout en bout, de l'architecture et de la conception d'API jusqu'à des interfaces réactives et performantes. Capable de traduire des besoins métier complexes en solutions scalables et prêtes pour la production, avec une attention constante à la qualité du code, à l'excellence technique et à l'impact mesurable.",
     "contact_sh": "./contact.sh",
     
     // Navigation
@@ -225,7 +225,7 @@ const translations = {
     
     // Dates formation
     "date_php_training": "Mai 2025",
-    "date_licence": "2021 - 2025",
+    "date_licence": "2021 - 2024",
     "date_master": "2025 - en cours",
     
     // Education section

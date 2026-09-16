@@ -33,7 +33,7 @@
       "image": "src/assets/logo.webp",
       "sameAs": [
         "https://www.linkedin.com/in/tonny-rajaoharivony-504a66273/",
-        "mailto:ynnotjoh@gmail.com"
+        "mailto:haritodytonny@gmail.com"
       ]
     }
     </script>
@@ -44,6 +44,7 @@
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
     <link href="./src/output.css" rel="stylesheet">
+    <link href="./src/orb.css" rel="stylesheet">
     <style>
         .flag-icon { width: 24px; height: 16px; transition: all 0.3s ease; }
         .language-toggle { display: flex; align-items: center; gap: 4px; padding: 6px; border-radius: 6px; background: rgba(255,255,255,0.1); transition: all 0.3s ease; }
@@ -110,14 +111,36 @@
         @keyframes text-glitch { 0%, 100% { opacity: 1; transform: translateX(0); } 10% { opacity: 0.9; transform: translateX(-1px); } 20% { opacity: 1; transform: translateX(1px); } 30% { opacity: 0.95; transform: translateX(0); } }
         .language-transition { opacity: 0; transform: translateY(20px); transition: all 0.3s ease-out; }
         .language-transition.active { opacity: 1; transform: translateY(0); }
+        /* Plan de la page, listé par le terminal du hero. */
+        .ls-nav { display: flex; flex-wrap: wrap; gap: 6px 20px; margin-top: 6px; font-size: 0.9rem; }
+        .ls-nav a { color: #4b5563; text-decoration: none; transition: color 0.2s ease; }
+        .dark .ls-nav a { color: #9ca3af; }
+        .ls-nav a:hover { color: #10b981; text-decoration: underline; text-underline-offset: 3px; }
+        .ls-nav a:focus-visible { outline: 2px solid #10b981; outline-offset: 2px; border-radius: 2px; }
+        /* Les ancres ne collent pas au bord haut de l'écran. */
+        section[id], header[id] { scroll-margin-top: 28px; }
+
+        /* Raccourci contact permanent, caché tant qu'on est dans le hero. */
+        .contact-dock {
+            position: fixed; left: 20px; bottom: calc(20px + env(safe-area-inset-bottom, 0px)); z-index: 45;
+            display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px;
+            border: 1px solid #d1d5db; border-radius: 999px; background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            color: #111827; font-size: 0.8rem; text-decoration: none; box-shadow: 0 10px 30px -14px rgba(0,0,0,0.5);
+            opacity: 0; transform: translateY(10px); pointer-events: none;
+            transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.23,1,0.32,1), border-color 0.2s ease, color 0.2s ease;
+        }
+        .dark .contact-dock { border-color: #374151; background: rgba(12,12,12,0.92); color: #e5e7eb; }
+        .contact-dock.is-visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+        .contact-dock:hover { border-color: #10b981; color: #10b981; }
+        .contact-dock:active { transform: scale(0.97); }
+        .contact-dock:focus-visible { outline: 2px solid #10b981; outline-offset: 3px; }
+        @media (prefers-reduced-motion: reduce) { .contact-dock { transition-duration: 0.01ms; } }
+
         .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.6s ease-out; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
         .project-card { opacity: 0; transform: translateX(-50px); transition: all 0.5s ease-out; }
         .project-card.visible { opacity: 1; transform: translateX(0); }
-        .nav-dot { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-        .nav-dot:focus-visible { outline:2px solid #10b981; }
-        .nav-dot:hover { transform: scale(1.5); }
-        .nav-dot.active { transform: scale(1.3); }
         .typewriter-cursor { animation: blink 1s infinite; }
         @keyframes blink { 0%,50%{opacity:1;} 51%,100%{opacity:0;} }
         button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid #10b981; outline-offset: 2px; }
@@ -174,22 +197,14 @@
         <i class="fas fa-sun text-yellow-300 hidden dark:block" aria-hidden="true"></i>
     </button>
 </div>
-<!-- Floating navigation -->
-<nav class="fixed left-6 top-1/2 transform -translate-y-1/2 z-40 hidden md:block" aria-label="Navigation principale">
-    <div class="flex flex-col space-y-4">
-        <a href="#about" class="w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600 hover:bg-green-500 dark:hover:bg-green-500 nav-dot active-nav" data-tooltip="À propos" data-i18n-attr="data-tooltip:nav_about" aria-label="À propos"></a>
-        <a href="#skills" class="w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600 hover:bg-green-500 dark:hover:bg-green-500 nav-dot" data-tooltip="Compétences" data-i18n-attr="data-tooltip:nav_skills" aria-label="Compétences"></a>
-        <a href="#projects" class="w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600 hover:bg-green-500 dark:hover:bg-green-500 nav-dot" data-tooltip="Projets" data-i18n-attr="data-tooltip:nav_projects" aria-label="Projets"></a>
-        <a href="#experiences" class="w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600 hover:bg-green-500 dark:hover:bg-green-500 nav-dot" data-tooltip="Expérience" data-i18n-attr="data-tooltip:nav_experience" aria-label="Expérience"></a>
-        <a href="#contact" class="w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600 hover:bg-green-500 dark:hover:bg-green-500 nav-dot" data-tooltip="Contact" data-i18n-attr="data-tooltip:nav_contact" aria-label="Contact"></a>
-        <a href="#game" class="w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600 hover:bg-green-500 dark:hover:bg-green-500 nav-dot" data-tooltip="Jeu" data-i18n-attr="data-tooltip:nav_game" aria-label="Jeu"></a>
-    </div>
-</nav>
+<!-- Scène three.js en fond de page : une pose par section. Voir src/dist/script/orb.js -->
+<div id="orbHero" class="orb-hero" aria-hidden="true"></div>
+
 
 <!-- Header with terminal style -->
 <header id="about" class="container mx-auto px-4 py-16 fade-in language-transition">
     <div class="max-w-4xl mx-auto">
-        <div class="bg-gray-100 dark:bg-darkgray p-8 rounded-lg shadow-sm">
+        <div class="orb-hero-card bg-gray-100 dark:bg-darkgray p-8 rounded-lg shadow-sm">
             <div class="flex items-center mb-6">
                 <div class="w-3 h-3 rounded-full bg-red-500 mr-2"></div>
                 <div class="w-3 h-3 rounded-full bg-yellow-500 mr-2"></div>
@@ -248,12 +263,20 @@
             <div class="terminal-output mb-6">
                 <p class="mono text-gray-600 dark:text-gray-400 mb-2 command-line">cat about.txt</p>
                 <p class="text-gray-700 dark:text-gray-300 leading-relaxed output-line" data-i18n="about_text">
-                    Développeur junior motivé et curieux, passionné par l'apprentissage continu et la résolution de
-                    problèmes complexes.
-                    Spécialisé en Électronique, Système Informatique et Intelligence Artificielle, je m'efforce
-                    d'atteindre l'excellence
-                    dans tous mes projets.
+                    Développeur full-stack avec un solide historique de livraison d'applications web de bout en bout, de l'architecture et de la conception d'API jusqu'à des interfaces réactives et performantes. Capable de traduire des besoins métier complexes en solutions scalables et prêtes pour la production, avec une attention constante à la qualité du code, à l'excellence technique et à l'impact mesurable.
                 </p>
+            </div>
+
+            <div class="terminal-output mb-6">
+                <p class="mono text-gray-600 dark:text-gray-400 mb-2 command-line">ls</p>
+                <div class="ls-nav mono" role="navigation" aria-label="Sections du site">
+                    <a href="#about">about/</a>
+                    <a href="#skills">skills/</a>
+                    <a href="#projects">projects/</a>
+                    <a href="#experiences">experience/</a>
+                    <a href="#formation">formation/</a>
+                    <a href="#contact">contact/</a>
+                </div>
             </div>
 
             <div class="terminal-output">
@@ -267,7 +290,7 @@
                        class="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition flex items-center">
                         <i class="fab fa-linkedin mr-2"></i> LinkedIn
                     </a>
-                    <a href="mailto:ynnotjoh@gmail.com"
+                    <a href="mailto:haritodytonny@gmail.com"
                        class="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition flex items-center">
                         <i class="fas fa-envelope mr-2"></i> Email
                     </a>
@@ -385,6 +408,22 @@
                                 <div class="progress-fill" style="--progress-width: 46%"></div>
                             </div>
                         </div>
+                        <div>
+                            <div class="flex justify-between mb-1 text-sm text-gray-600 dark:text-gray-400">
+                                <span>Next.js</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="--progress-width: 50%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1 text-sm text-gray-600 dark:text-gray-400">
+                                <span>Angular</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="--progress-width: 35%"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -413,6 +452,14 @@
                                 <div class="progress-fill" style="--progress-width: 40%"></div>
                             </div>
                         </div>
+                        <div>
+                            <div class="flex justify-between mb-1 text-sm text-gray-600 dark:text-gray-400">
+                                <span>NoSQL</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="--progress-width: 35%"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -426,9 +473,12 @@
                     </div>
                     <div class="flex flex-wrap gap-2">
                         <span class="tag px-3 py-1 rounded-full text-sm">Git</span>
+                        <span class="tag px-3 py-1 rounded-full text-sm">GitHub</span>
                         <span class="tag px-3 py-1 rounded-full text-sm">Linux</span>
                         <span class="tag px-3 py-1 rounded-full text-sm">Arduino</span>
                         <span class="tag px-3 py-1 rounded-full text-sm">Tailwindcss</span>
+                        <span class="tag px-3 py-1 rounded-full text-sm">Supabase</span>
+                        <span class="tag px-3 py-1 rounded-full text-sm">Agile / Scrum</span>
                     </div>
                 </div>
             </div>
@@ -765,7 +815,7 @@
     <div class="section-divider"></div>
 
     <!-- Formation section -->
-    <section class="mb-20 fade-in">
+    <section id="formation" class="mb-20 fade-in">
         <div class="max-w-4xl mx-auto">
             <div class="terminal-output mb-8">
                 <p class="mono text-gray-600 dark:text-gray-400 command-line" data-i18n="edu_cmd">cat formation.txt</p>
@@ -813,7 +863,7 @@
                 <div class="bg-gray-50 dark:bg-darkgray p-6 rounded-lg border border-gray-200 dark:border-gray-700 card-hover fade-in">
                     <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
                         <h3 class="text-lg font-medium text-gray-900 dark:text-white" data-i18n="edu_licence_title">Licence en Informatique et Télécommunication</h3>
-                        <span class="text-sm text-gray-500 dark:text-gray-400" data-i18n="date_licence">2021 - 2025</span>
+                        <span class="text-sm text-gray-500 dark:text-gray-400" data-i18n="date_licence">2021 - 2024</span>
                     </div>
                     <p class="text-gray-600 dark:text-gray-400 mb-3 output-line">Institut Supérieur Polytechnique de Madagascar</p>
                     <p class="text-gray-700 dark:text-gray-300 output-line" data-i18n="edu_licence_desc">
@@ -951,6 +1001,11 @@
 </main>
 
 <!-- Footer -->
+<!-- Raccourci contact : apparaît une fois le hero passé, disparaît sur la section contact -->
+<a id="contactDock" class="contact-dock mono" href="#contact" aria-label="Aller au formulaire de contact">
+    <i class="fas fa-envelope" aria-hidden="true"></i><span>contact</span>
+</a>
+
 <footer class="bg-white dark:bg-zinc-900 py-12 border-t border-gray-200 dark:border-zinc-900 fade-in">
     <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto">
@@ -971,7 +1026,7 @@
                         <a href="https://www.linkedin.com/in/tonny-rajaoharivony-504a66273/" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 text-xl">
                             <i class="fab fa-linkedin"></i>
                         </a>
-                        <a href="mailto:ynnotjoh@gmail.com" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 text-xl">
+                        <a href="mailto:haritodytonny@gmail.com" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 text-xl">
                             <i class="fas fa-envelope"></i>
                         </a>
                         <a href="src/assets/cv.pdf" download class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 text-xl">
@@ -1016,6 +1071,38 @@
 <script src="src/dist/script/script.min.js" defer></script>
 <script src="src/dist/script/form.min.js" defer></script>
 <script src="src/dist/script/style.js" defer></script>
+<script>
+    // Le raccourci n'apparaît qu'une fois le hero passé, et s'efface quand on
+    // atteint le formulaire : inutile de proposer d'aller là où on est déjà.
+    (function () {
+        var dock = document.getElementById('contactDock');
+        var hero = document.getElementById('about');
+        var contact = document.getElementById('contact');
+        if (!dock || !hero || !contact || !window.IntersectionObserver) return;
+        var pastHero = false, atContact = false;
+        function update() { dock.classList.toggle('is-visible', pastHero && !atContact); }
+        new IntersectionObserver(function (e) { pastHero = !e[0].isIntersecting; update(); },
+            { rootMargin: '-120px 0px 0px 0px' }).observe(hero);
+        new IntersectionObserver(function (e) { atContact = e[0].isIntersecting; update(); },
+            { rootMargin: '0px 0px -25% 0px' }).observe(contact);
+    })();
+</script>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.186.0/build/three.module.min.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.186.0/examples/jsm/"
+  }
+}
+</script>
+<script>
+    // La scène n'est chargée qu'une fois la page prête : three.js pèse plus lourd que
+    // tout le reste du site et ne doit pas retarder l'écran de chargement.
+    window.addEventListener('load', function () {
+        import('./src/dist/script/orb.js');
+    });
+</script>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         document.querySelectorAll("img").forEach(img => {
