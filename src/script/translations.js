@@ -1,4 +1,5 @@
-// Translations object containing all text content in both languages
+// Translations object containing all text content in both languages.
+// Keyed by `data-i18n` / `data-i18n-attr` values consumed in language.js.
 const translations = {
   en: {
     // Header & About

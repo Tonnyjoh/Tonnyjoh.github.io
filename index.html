@@ -52,7 +52,7 @@
     </noscript>
     <link href="./src/output.css" rel="stylesheet">
     <style>
-        /* Bulle de verre du hero (src/dist/script/orb.js) : inlinée, le fichier ne pesant
+        /* Bulle de verre du hero (src/script/orb.js) : inlinée, le fichier ne pesant
            pas assez pour justifier une requête bloquante séparée. */
         .orb-hero { position: fixed; inset: 0; z-index: -1; pointer-events: none; }
         .orb-hero canvas { display: block; width: 100%; height: 100%; opacity: 0; transition: opacity 1.2s cubic-bezier(0.23, 1, 0.32, 1); }
@@ -213,7 +213,7 @@
         <i class="fas fa-sun text-yellow-300 hidden dark:block" aria-hidden="true"></i>
     </button>
 </div>
-<!-- Scène three.js en fond de page : une pose par section. Voir src/dist/script/orb.js -->
+<!-- Scène three.js en fond de page : une pose par section. Voir src/script/orb.js -->
 <div id="orbHero" class="orb-hero" aria-hidden="true"></div>
 
 
@@ -1082,11 +1082,11 @@
         <iframe id="gameFrame" data-src="src/arcade.html" title="Galactic Defender" class="w-full h-full border-0" loading="lazy"></iframe>
     </div>
 </div>
-<script src="src/dist/script/translations.js" defer></script>
-<script src="src/dist/script/language.js" defer></script>
+<script src="src/dist/script/translations.min.js" defer></script>
+<script src="src/dist/script/language.min.js" defer></script>
 <script src="src/dist/script/script.min.js" defer></script>
 <script src="src/dist/script/form.min.js" defer></script>
-<script src="src/dist/script/style.js" defer></script>
+<script src="src/dist/script/style.min.js" defer></script>
 <script>
     // Le raccourci n'apparaît qu'une fois le hero passé, et s'efface quand on
     // atteint le formulaire : inutile de proposer d'aller là où on est déjà.
@@ -1116,7 +1116,7 @@
     // La scène n'est chargée qu'une fois la page prête : three.js pèse plus lourd que
     // tout le reste du site et ne doit pas retarder l'écran de chargement.
     window.addEventListener('load', function () {
-        import('./src/dist/script/orb.js');
+        import('./src/dist/script/orb.min.js');
     });
 </script>
 <script>

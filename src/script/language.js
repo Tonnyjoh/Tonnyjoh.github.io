@@ -1,4 +1,5 @@
-// Language switcher functionality
+// Language switcher functionality.
+// Depends on the `translations` object defined in translations.js, loaded before this file.
 document.addEventListener('DOMContentLoaded', function() {
   // Get saved language or set default to French
   let currentLang = localStorage.getItem('language') || 'fr';
@@ -16,7 +17,10 @@ document.addEventListener('DOMContentLoaded', function() {
     updateLanguageToggle(currentLang);
   });
   
-  // Function to update language toggle appearance
+  /**
+   * Dims the flag icon of the inactive language in the toggle button.
+   * @param {'fr'|'en'} lang - Currently active language.
+   */
   function updateLanguageToggle(lang) {
     const toggle = document.getElementById('languageToggle');
     const frFlag = document.getElementById('frFlag');
@@ -31,7 +35,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
   
-  // Function to apply translations
+  /**
+   * Applies translated strings to every element flagged for i18n, and updates
+   * `<html lang>`. Two markup conventions are supported: `data-i18n` swaps the
+   * element's content (or placeholder, for inputs/textareas), while
+   * `data-i18n-attr="attr:key,attr2:key2"` swaps arbitrary HTML attributes
+   * (e.g. `title`, `aria-label`) that plain innerHTML translation can't reach.
+   * @param {'fr'|'en'} lang - Language to apply.
+   */
   function applyLanguage(lang) {
     document.querySelectorAll('[data-i18n]').forEach(element => {
       const key = element.getAttribute('data-i18n');

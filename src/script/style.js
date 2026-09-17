@@ -4,6 +4,11 @@ const fullName = "RAJAOHARIVONY Haritody Tonny Raldo";
 let i = 0;
 let isCursorVisible = true;
 
+/**
+ * Affiche `fullName` lettre par lettre dans #typewriter-name, puis laisse un
+ * curseur clignoter indéfiniment une fois le nom complet affiché.
+ * S'appelle elle-même via setTimeout jusqu'à épuisement de la chaîne.
+ */
 function typeWriter() {
     if (i < fullName.length) {
         nameElement.innerHTML = fullName.substring(0, i + 1) + '<span class="cursor">|</span>';
@@ -17,7 +22,10 @@ function typeWriter() {
     }
 }
 
-// Animation au scroll
+/**
+ * Appelée à chaque scroll : révèle les éléments `.fade-in` entrés dans l'écran
+ * et met à jour le lien `nav a` actif selon la section actuellement visible.
+ */
 function checkScroll() {
     const elements = document.querySelectorAll('.fade-in');
     elements.forEach(el => {

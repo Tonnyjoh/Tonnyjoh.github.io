@@ -473,6 +473,7 @@ if (host && renderer) {
   let themeMix = isDark() ? 1 : 0;
   let themeTarget = themeMix;
 
+  /** Recalcule uniformes et couleurs matériau à partir de `themeMix` courant (0 = clair, 1 = sombre). */
   function applyTheme() {
     for (const key of COLOR_KEYS) TARGETS[key].copy(COLORS.light[key]).lerp(COLORS.dark[key], themeMix);
     renderer.toneMappingExposure = THREE.MathUtils.lerp(THEMES.light.exposure, THEMES.dark.exposure, themeMix);
@@ -489,6 +490,7 @@ if (host && renderer) {
   let aspect = 1;
   let viewWidth = 1;
   let viewHeight = 1;
+  /** Resynchronise renderer, caméra et fond avec la taille actuelle de `host`. Appelée au montage et par le ResizeObserver ci-dessous. */
   const resize = () => {
     viewWidth = host.clientWidth || window.innerWidth;
     viewHeight = host.clientHeight || 1;
@@ -528,6 +530,12 @@ if (host && renderer) {
   let slowFrames = 0;
   let ready = false;
 
+  /**
+   * Boucle de rendu (une frame par requestAnimationFrame). Fait avancer la pose de la bulle,
+   * le thème, les braises et le rendu du fond, puis se replanifie elle-même tant que
+   * `running` reste vrai (voir `start`/`stop`). Réduit aussi le pixel ratio à la volée si
+   * les frames deviennent trop lentes (`slowFrames`), pour tenir sur les machines faibles.
+   */
   const tick = (now) => {
     // Pas de temps réel plafonné : sur une machine lente, l'animation garde son rythme.
     const dt = Math.min((now - last) / 1000, 0.25);
@@ -617,6 +625,7 @@ if (host && renderer) {
     raf = requestAnimationFrame(tick);
   };
 
+  /** (Re)lance la boucle `tick` si elle n'est pas déjà active. */
   function start() {
     if (running) return;
     running = true;
@@ -624,6 +633,7 @@ if (host && renderer) {
     raf = requestAnimationFrame(tick);
   }
 
+  /** Interrompt la boucle `tick` (hors écran ou onglet masqué : voir plus bas). */
   function stop() {
     if (!running) return;
     running = false;
