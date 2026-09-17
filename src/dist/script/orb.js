@@ -291,6 +291,16 @@ if (host && window.innerWidth >= MIN_WIDTH) {
     // 'default' laisse la machine choisir : inutile de réveiller la carte dédiée
     // d'un portable pour un décor de fond.
     renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: 'default' });
+    // Sans GPU (headless Chrome, VM, Lighthouse/PageSpeed...), WebGL retombe sur un rendu
+    // logiciel (SwiftShader, llvmpipe) : la scène tournerait en boucle sur le CPU et ferait
+    // exploser le temps de blocage principal. Mieux vaut ne pas l'afficher du tout.
+    const gl = renderer.getContext();
+    const info = gl.getExtension('WEBGL_debug_renderer_info');
+    const glRenderer = info ? String(gl.getParameter(info.UNMASKED_RENDERER_WEBGL)) : '';
+    if (/swiftshader|llvmpipe|software/i.test(glRenderer)) {
+      renderer.dispose();
+      renderer = null;
+    }
   } catch (err) {
     renderer = null;
   }
