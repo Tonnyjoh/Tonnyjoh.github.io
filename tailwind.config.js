@@ -1,6 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./**/*.{html,js}"],
+  content: [
+    "./index.html",
+    "./src/dist/script/*.js",
+  ],
+  // arcade.html charge Tailwind par CDN et gère son propre balisage : l'exclure
+  // évite de purger des classes qu'il utilise seul, ce qui gonflait ce fichier.
   darkMode: 'class',
     theme: {
         extend: {

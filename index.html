@@ -41,8 +41,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Inter:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
     <link href="./src/output.css" rel="stylesheet">
     <link href="./src/orb.css" rel="stylesheet">
     <style>
@@ -884,7 +883,7 @@
                             class="relative group rounded-xl overflow-hidden border-2 border-green-300 dark:border-green-800 bg-white dark:bg-darkgray shadow hover:shadow-xl hover:border-green-600 dark:hover:border-green-400 transition-all duration-200 focus:outline-none"
                             onclick="openCertModal('https://api.accredible.com/v1/frontend/credential_website_embed_image/certificate/153603941', 'Framework Valley: React (Codédex, 2025)', 'https://www.credential.net/3bcdfe58-9824-4b78-888c-d0d17f8ce0a7#acc.hq04WnEJ')">
                             <img src="https://api.accredible.com/v1/frontend/credential_website_embed_image/certificate/153603941"
-                                alt="Certification React Codédex"
+                                alt="Certification React Codédex" loading="lazy" decoding="async"
                                 class="object-cover w-full h-28 sm:h-32 md:h-36 opacity-90 group-hover:opacity-100 transition duration-300" />
                             <div
                                 class="absolute inset-0 bg-gradient-to-t from-green-400/60 dark:from-green-800/70 to-transparent opacity-80 group-hover:opacity-90 transition duration-300">
@@ -902,7 +901,7 @@
                                 class="relative group rounded-xl overflow-hidden border-2 border-green-300 dark:border-green-800 bg-white dark:bg-darkgray shadow hover:shadow-xl hover:border-green-600 dark:hover:border-green-400 transition-all duration-200 focus:outline-none"
                                 onclick="openCertModal('src/assets/php_certif.jpg', 'Certification PHP Avancé (eTech, 2025)', '')">
                                 <img src="src/assets/php_certif.jpg"
-                                    alt="Certification PHP Avancé"
+                                    alt="Certification PHP Avancé" loading="lazy" decoding="async"
                                     class="object-cover w-full h-28 sm:h-32 md:h-36 opacity-90 group-hover:opacity-100 transition duration-300" />
                                 <div
                                     class="absolute inset-0 bg-gradient-to-t from-green-400/60 dark:from-green-800/70 to-transparent opacity-80 group-hover:opacity-90 transition duration-300">
@@ -1063,7 +1062,7 @@
 <div id="gameModal" class="fixed inset-0 z-[1000] opacity-0 invisible transition-opacity duration-300 ease-in-out backdrop-blur-md">
     <div class="relative w-full h-full bg-white dark:bg-zinc-900 overflow-hidden">
         <button id="closeGameModal" class="absolute top-4 right-4 bg-transparent border-none text-2xl text-gray-500 dark:text-gray-400 cursor-pointer w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 hover:text-red-500 dark:hover:text-red-400 hover:bg-black/5 dark:hover:bg-white/5 z-10" aria-label="Fermer le jeu">&times;</button>
-        <iframe src="src/arcade.html" class="w-full h-full border-0"></iframe>
+        <iframe id="gameFrame" data-src="src/arcade.html" title="Galactic Defender" class="w-full h-full border-0" loading="lazy"></iframe>
     </div>
 </div>
 <script src="src/dist/script/translations.js" defer></script>
@@ -1238,6 +1237,9 @@
 
     function openGameModal() {
         const modal = document.getElementById('gameModal');
+        // Le jeu (Tailwind CDN + captures embarquées) n'est chargé qu'à la première ouverture.
+        const frame = document.getElementById('gameFrame');
+        if (frame && !frame.getAttribute('src')) frame.setAttribute('src', frame.dataset.src);
         modal.classList.remove('invisible', 'opacity-0');
         modal.classList.add('visible', 'opacity-100');
         document.body.classList.add('overflow-hidden');
