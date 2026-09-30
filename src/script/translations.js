@@ -91,11 +91,14 @@ const translations = {
     // Education dates
     "date_php_training": "May 2025",
     "date_licence": "2021 - 2024",
-    "date_master": "2025 - present",
-    
+    "date_master1": "2025 - 2026",
+    "date_master2": "2026 - present",
+
     // Education section
     "edu_cmd": "cat formation.txt",
     "edu_title": "Education",
+    "edu_master2_title": "Master 2 in Computer Science",
+    "edu_master2_desc": "Master 2 at Université Côte d'Azur (MBDS program).",
     "edu_php_title": "Advanced PHP Training",
     "edu_php_desc": "Intensive training in PHP development with the Symfony framework. Learning best practices, MVC architecture, security and performance of web applications.",
     "edu_php_skills": "Skills acquired:",
@@ -106,8 +109,8 @@ const translations = {
     "edu_php_skill5": "Unit and functional testing",
     "edu_licence_title": "Bachelor in Computer Science and Telecommunications",
     "edu_licence_desc": "Complete computer science training with specialization in software development and intelligent systems. Acquisition of skills in programming, databases and artificial intelligence.",
-    "edu_master_title": "Master 1 in Computer Science",
-    "edu_master_desc": "Master 1 at IT University.",
+    "edu_master1_title": "Master 1 in Computer Science",
+    "edu_master1_desc": "Master 1 at IT University.",
     
     // Project Lantorian SaaS
     "saas_title": "Lantorian SaaS",
@@ -227,11 +230,14 @@ const translations = {
     // Dates formation
     "date_php_training": "Mai 2025",
     "date_licence": "2021 - 2024",
-    "date_master": "2025 - en cours",
-    
+    "date_master1": "2025 - 2026",
+    "date_master2": "2026 - en cours",
+
     // Education section
     "edu_cmd": "cat formation.txt",
     "edu_title": "Formations",
+    "edu_master2_title": "Master 2 en Informatique",
+    "edu_master2_desc": "Master 2 à l'Université Côte d'Azur (parcours MBDS).",
     "edu_php_title": "Formation PHP Avancé",
     "edu_php_desc": "Formation intensive en développement PHP avec le framework Symfony. Apprentissage des bonnes pratiques, architecture MVC, sécurité et performance des applications web.",
     "edu_php_skills": "Compétences acquises:",
@@ -242,8 +248,8 @@ const translations = {
     "edu_php_skill5": "Tests unitaires et fonctionnels",
     "edu_licence_title": "Licence en Informatique et Télécommunication",
     "edu_licence_desc": "Formation complète en informatique avec spécialisation en développement logiciel et systèmes intelligents. Acquisition de compétences en programmation, bases de données et intelligence artificielle.",
-    "edu_master_title": "Master 1 en Informatique",
-    "edu_master_desc": "Master 1 à IT University.",
+    "edu_master1_title": "Master 1 en Informatique",
+    "edu_master1_desc": "Master 1 à IT University.",
     
     // Project Lantorian SaaS
     "saas_title": "Lantorian SaaS",
