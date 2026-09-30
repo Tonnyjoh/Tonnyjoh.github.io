@@ -286,21 +286,18 @@ function samplePose(stage, out) {
 }
 
 let renderer = null;
+let softwareRenderer = false;
 if (host && window.innerWidth >= MIN_WIDTH) {
   try {
     // 'default' laisse la machine choisir : inutile de réveiller la carte dédiée
     // d'un portable pour un décor de fond.
     renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: 'default' });
-    // Sans GPU (headless Chrome, VM, Lighthouse/PageSpeed...), WebGL retombe sur un rendu
-    // logiciel (SwiftShader, llvmpipe) : la scène tournerait en boucle sur le CPU et ferait
-    // exploser le temps de blocage principal. Mieux vaut ne pas l'afficher du tout.
+    // Garder la scène visible si WebGL utilise le CPU, avec une résolution et une
+    // cadence réduites pour limiter son coût sur les machines sans GPU disponible.
     const gl = renderer.getContext();
     const info = gl.getExtension('WEBGL_debug_renderer_info');
     const glRenderer = info ? String(gl.getParameter(info.UNMASKED_RENDERER_WEBGL)) : '';
-    if (/swiftshader|llvmpipe|software/i.test(glRenderer)) {
-      renderer.dispose();
-      renderer = null;
-    }
+    softwareRenderer = /swiftshader|llvmpipe|software/i.test(glRenderer);
   } catch (err) {
     renderer = null;
   }
@@ -312,7 +309,7 @@ if (host && renderer) {
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  let pixelRatio = Math.min(window.devicePixelRatio, MAX_PIXEL_RATIO);
+  let pixelRatio = softwareRenderer ? MIN_PIXEL_RATIO : Math.min(window.devicePixelRatio, MAX_PIXEL_RATIO);
   renderer.setPixelRatio(pixelRatio);
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
@@ -537,6 +534,10 @@ if (host && renderer) {
    * les frames deviennent trop lentes (`slowFrames`), pour tenir sur les machines faibles.
    */
   const tick = (now) => {
+    if (softwareRenderer && now - last < 1000 / 30) {
+      raf = requestAnimationFrame(tick);
+      return;
+    }
     // Pas de temps réel plafonné : sur une machine lente, l'animation garde son rythme.
     const dt = Math.min((now - last) / 1000, 0.25);
     last = now;

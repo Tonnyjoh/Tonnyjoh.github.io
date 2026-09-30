@@ -91,7 +91,8 @@ const translations = {
     // Education dates
     "date_php_training": "May 2025",
     "date_licence": "2021 - 2024",
-    "date_master": "2025 - present",
+    "date_master": "2025 - 2026",
+    "date_master2": "2026 - present",
     
     // Education section
     "edu_cmd": "cat formation.txt",
@@ -108,6 +109,7 @@ const translations = {
     "edu_licence_desc": "Complete computer science training with specialization in software development and intelligent systems. Acquisition of skills in programming, databases and artificial intelligence.",
     "edu_master_title": "Master 1 in Computer Science",
     "edu_master_desc": "Master 1 at IT University.",
+    "edu_master2_title": "Master 2 (MBDS)",
     
     // Project Lantorian SaaS
     "saas_title": "Lantorian SaaS",
@@ -227,7 +229,8 @@ const translations = {
     // Dates formation
     "date_php_training": "Mai 2025",
     "date_licence": "2021 - 2024",
-    "date_master": "2025 - en cours",
+    "date_master": "2025 - 2026",
+    "date_master2": "2026 - en cours",
     
     // Education section
     "edu_cmd": "cat formation.txt",
@@ -244,6 +247,7 @@ const translations = {
     "edu_licence_desc": "Formation complète en informatique avec spécialisation en développement logiciel et systèmes intelligents. Acquisition de compétences en programmation, bases de données et intelligence artificielle.",
     "edu_master_title": "Master 1 en Informatique",
     "edu_master_desc": "Master 1 à IT University.",
+    "edu_master2_title": "Master 2 (MBDS)",
     
     // Project Lantorian SaaS
     "saas_title": "Lantorian SaaS",
