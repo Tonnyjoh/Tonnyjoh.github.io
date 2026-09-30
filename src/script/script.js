@@ -167,19 +167,30 @@
   };
 
   /**
-   * Reveals each `.progress-fill` bar at its target width the first time it scrolls into view,
+   * Animates each `.progress-fill` bar from 0 to its target width (read from the
+   * `--progress-width` custom property) the first time it scrolls into view,
    * then stops observing it — the animation plays once per page load.
    */
   const initSkillBarsAnimation = () => {
     const progressBars = document.querySelectorAll('.progress-fill');
     if (!progressBars.length) return;
 
+    const animateProgressBar = (bar) => {
+      const width = bar.style.getPropertyValue('--progress-width');
+      bar.style.width = '0%';
+      setTimeout(() => {
+        bar.style.transition = 'width 1s ease-out';
+        bar.style.width = width;
+      }, 100);
+    };
+
     // Intersection observer for skills section
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
+          const progressBar = entry.target;
+          animateProgressBar(progressBar);
+          observer.unobserve(progressBar);
         }
       });
     }, { threshold: 0.2 });
